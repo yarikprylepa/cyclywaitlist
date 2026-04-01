@@ -1,1 +1,400 @@
-{content}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cycly — Ride Smarter</title>
+  <meta name="description" content="Cycly is the cycling app built for serious riders. Training plans, route discovery, performance insights and a community that gets it. Join the waitlist.">
+  <meta property="og:title" content="Cycly — Ride Smarter">
+  <meta property="og:description" content="The cycling app built for riders who love the ride. Join the waitlist.">
+  <meta property="og:type" content="website">
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --text-xs:   clamp(0.75rem,0.7rem + 0.25vw,0.875rem);
+      --text-sm:   clamp(0.875rem,0.8rem + 0.35vw,1rem);
+      --text-base: clamp(1rem,0.95rem + 0.25vw,1.125rem);
+      --text-lg:   clamp(1.125rem,1rem + 0.75vw,1.5rem);
+      --text-xl:   clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
+      --text-2xl:  clamp(2rem,1.2rem + 2.5vw,3.5rem);
+      --text-3xl:  clamp(2.5rem,1rem + 4vw,5rem);
+      --text-hero: clamp(3rem,0.5rem + 7vw,8rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;
+      --space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;
+      --space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;
+      --radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;
+      --radius-xl:1rem;--radius-2xl:1.5rem;--radius-full:9999px;
+      --transition-interactive:180ms cubic-bezier(0.16,1,0.3,1);
+      --color-bg:#f5f4f0;--color-surface:#f8f7f4;--color-surface-2:#faf9f7;
+      --color-surface-offset:#eeecea;--color-surface-dynamic:#e5e3de;
+      --color-divider:#dbd9d4;--color-border:#d3d0cb;
+      --color-text:#1a1c14;--color-text-muted:#6b6b5f;--color-text-faint:#b0afa9;
+      --color-text-inverse:#f5f4f0;
+      --color-primary:#1a5c2a;--color-primary-hover:#134a20;--color-primary-active:#0d3817;
+      --color-primary-highlight:#c8dbc8;
+      --color-accent:#b5e04a;--color-accent-dark:#8ab82e;
+      --shadow-sm:0 1px 2px oklch(0.15 0.02 130/0.06);
+      --shadow-md:0 4px 12px oklch(0.15 0.02 130/0.10);
+      --shadow-lg:0 12px 32px oklch(0.15 0.02 130/0.15);
+      --content-narrow:640px;--content-default:960px;--content-wide:1200px;
+      --font-display:'Cabinet Grotesk','Helvetica Neue',sans-serif;
+      --font-body:'Satoshi','Inter',sans-serif;
+    }
+    [data-theme="dark"] {
+      --color-bg:#111410;--color-surface:#161814;--color-surface-2:#1a1c17;
+      --color-surface-offset:#1e2019;--color-surface-dynamic:#262820;
+      --color-divider:#2e3028;--color-border:#38392f;
+      --color-text:#d4d5cc;--color-text-muted:#808175;--color-text-faint:#565750;
+      --color-text-inverse:#1a1c14;
+      --color-primary:#5aaa6a;--color-primary-hover:#4a9258;--color-primary-active:#3a7a46;
+      --color-primary-highlight:#2a3a2a;
+      --color-accent:#c8f060;--color-accent-dark:#a8cc45;
+      --shadow-sm:0 1px 2px oklch(0 0 0/0.25);
+      --shadow-md:0 4px 12px oklch(0 0 0/0.35);
+      --shadow-lg:0 12px 32px oklch(0 0 0/0.5);
+    }
+    @media(prefers-color-scheme:dark){
+      :root:not([data-theme]){
+        --color-bg:#111410;--color-surface:#161814;--color-surface-2:#1a1c17;
+        --color-surface-offset:#1e2019;--color-surface-dynamic:#262820;
+        --color-divider:#2e3028;--color-border:#38392f;
+        --color-text:#d4d5cc;--color-text-muted:#808175;--color-text-faint:#565750;
+        --color-text-inverse:#1a1c14;
+        --color-primary:#5aaa6a;--color-primary-hover:#4a9258;--color-primary-active:#3a7a46;
+        --color-primary-highlight:#2a3a2a;
+        --color-accent:#c8f060;--color-accent-dark:#a8cc45;
+        --shadow-sm:0 1px 2px oklch(0 0 0/0.25);
+        --shadow-md:0 4px 12px oklch(0 0 0/0.35);
+        --shadow-lg:0 12px 32px oklch(0 0 0/0.5);
+      }
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth;scroll-padding-top:var(--space-16)}
+    body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background-color:var(--color-bg);overflow-x:hidden}
+    img,svg{display:block;max-width:100%}
+    h1,h2,h3,h4{text-wrap:balance;line-height:1.1;font-family:var(--font-display)}
+    p,li{text-wrap:pretty}
+    input,button,textarea,select{font:inherit;color:inherit}
+    button{cursor:pointer;background:none;border:none}
+    ::selection{background:oklch(from var(--color-primary) l c h/0.2);color:var(--color-text)}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+    .container{max-width:var(--content-default);margin-inline:auto;padding-inline:var(--space-6)}
+    .container--wide{max-width:var(--content-wide);margin-inline:auto;padding-inline:var(--space-6)}
+    .header{position:sticky;top:0;z-index:50;padding-block:var(--space-4);background:oklch(from var(--color-bg) l c h/0.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid oklch(from var(--color-text) l c h/0.07);transition:box-shadow var(--transition-interactive)}
+    .header--scrolled{box-shadow:var(--shadow-sm)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--content-wide);margin-inline:auto;padding-inline:var(--space-6)}
+    .logo{display:flex;align-items:center;gap:var(--space-2);text-decoration:none;color:var(--color-text)}
+    .logo-wordmark{font-family:var(--font-display);font-weight:800;font-size:var(--text-lg);letter-spacing:-0.03em;color:var(--color-text)}
+    .header-actions{display:flex;align-items:center;gap:var(--space-3)}
+    .theme-toggle{width:36px;height:36px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;color:var(--color-text-muted);border:1px solid var(--color-border);transition:color var(--transition-interactive),background var(--transition-interactive),border-color var(--transition-interactive)}
+    .theme-toggle:hover{color:var(--color-text);background:var(--color-surface-offset)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);padding:var(--space-3) var(--space-6);border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:600;letter-spacing:-0.01em;text-decoration:none;cursor:pointer;border:none;transition:background var(--transition-interactive),color var(--transition-interactive),box-shadow var(--transition-interactive),transform var(--transition-interactive)}
+    .btn-outline{background:transparent;color:var(--color-text);border:1.5px solid var(--color-border)}
+    .btn-outline:hover{border-color:var(--color-primary);color:var(--color-primary)}
+    .hero{position:relative;overflow:hidden;padding-top:clamp(var(--space-16),10vw,var(--space-24));padding-bottom:clamp(var(--space-12),6vw,var(--space-20));text-align:center}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% -10%,oklch(0.35 0.10 145/0.12) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 80%,oklch(0.75 0.18 88/0.06) 0%,transparent 60%);pointer-events:none}
+    .hero-badge{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-2) var(--space-4);background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:600;color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:var(--space-8)}
+    .hero-badge-dot{width:6px;height:6px;border-radius:var(--radius-full);background:var(--color-accent);box-shadow:0 0 8px var(--color-accent);animation:pulse-dot 2s ease-in-out infinite}
+    @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.85)}}
+    .hero-heading{font-size:var(--text-3xl);font-weight:800;letter-spacing:-.04em;color:var(--color-text);max-width:16ch;margin-inline:auto;margin-bottom:var(--space-6);line-height:1.0}
+    .hero-heading em{font-style:normal;color:var(--color-primary)}
+    .hero-sub{font-size:var(--text-lg);color:var(--color-text-muted);max-width:48ch;margin-inline:auto;margin-bottom:var(--space-10);line-height:1.55;font-weight:400}
+    .waitlist-form{display:flex;gap:var(--space-3);justify-content:center;flex-wrap:wrap;margin-bottom:var(--space-6)}
+    .waitlist-input-wrap{position:relative;flex:1 1 260px;max-width:340px}
+    .waitlist-input{width:100%;padding:var(--space-4) var(--space-5);padding-right:var(--space-10);border-radius:var(--radius-full);border:1.5px solid var(--color-border);background:var(--color-surface-2);color:var(--color-text);font-size:var(--text-base);transition:border-color var(--transition-interactive),box-shadow var(--transition-interactive);outline:none}
+    .waitlist-input::placeholder{color:var(--color-text-faint)}
+    .waitlist-input:focus{border-color:var(--color-primary);box-shadow:0 0 0 3px oklch(from var(--color-primary) l c h/0.12)}
+    .waitlist-input-icon{position:absolute;right:var(--space-4);top:50%;transform:translateY(-50%);color:var(--color-text-faint);pointer-events:none}
+    .btn-waitlist{padding:var(--space-4) var(--space-8);font-size:var(--text-base);font-weight:700;background:var(--color-primary);color:#fff;border-radius:var(--radius-full);border:none;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background var(--transition-interactive),box-shadow var(--transition-interactive),transform var(--transition-interactive)}
+    .btn-waitlist:hover{background:var(--color-primary-hover);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+    .btn-waitlist:active{transform:translateY(0);box-shadow:var(--shadow-sm)}
+    .hero-note{font-size:var(--text-xs);color:var(--color-text-faint);display:flex;align-items:center;justify-content:center;gap:var(--space-2)}
+    .hero-count{display:inline-flex;align-items:center;gap:var(--space-3);margin-top:var(--space-8);padding:var(--space-3) var(--space-5);background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-full);font-size:var(--text-sm);color:var(--color-text-muted)}
+    .avatar-stack{display:flex}
+    .avatar{width:28px;height:28px;border-radius:var(--radius-full);border:2px solid var(--color-bg);margin-left:-8px;overflow:hidden;background:var(--color-surface-offset)}
+    .avatar:first-child{margin-left:0}
+    .avatar-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff}
+    .hero-visual{margin-top:clamp(var(--space-12),6vw,var(--space-20));position:relative}
+    .phone-mockup{width:min(340px,90vw);margin-inline:auto;background:var(--color-surface);border-radius:2.5rem;border:1.5px solid var(--color-border);box-shadow:var(--shadow-lg),0 40px 80px oklch(0.15 0.05 140/0.12);overflow:hidden}
+    .phone-notch{width:120px;height:32px;background:var(--color-bg);border-radius:0 0 var(--radius-xl) var(--radius-xl);margin-inline:auto;margin-bottom:var(--space-2)}
+    .phone-screen{padding:var(--space-4)}
+    .phone-map{border-radius:var(--radius-xl);height:180px;background:linear-gradient(160deg,oklch(0.70 0.12 145) 0%,oklch(0.60 0.10 160) 40%,oklch(0.45 0.09 150) 100%);position:relative;overflow:hidden;margin-bottom:var(--space-4)}
+    .phone-map::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 180'%3E%3Cpath d='M 20 140 Q 60 80 120 100 T 220 60 T 320 80' fill='none' stroke='rgba(255,255,255,0.6)' stroke-width='3' stroke-linecap='round' stroke-dasharray='6 4'/%3E%3Ccircle cx='320' cy='80' r='6' fill='%23b5e04a'/%3E%3Ccircle cx='320' cy='80' r='11' fill='rgba(181,224,74,0.3)'/%3E%3C/svg%3E") no-repeat center/cover}
+    .map-overlay{position:absolute;top:var(--space-3);left:var(--space-3);background:oklch(0 0 0/0.4);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:var(--radius-md);padding:var(--space-2) var(--space-3);color:#fff;font-size:var(--text-xs);font-weight:600}
+    .phone-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-2);margin-bottom:var(--space-4)}
+    .stat-pill{background:var(--color-surface-offset);border-radius:var(--radius-lg);padding:var(--space-3) var(--space-2);text-align:center}
+    .stat-val{font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;color:var(--color-text);letter-spacing:-.03em;line-height:1;margin-bottom:var(--space-1)}
+    .stat-label{font-size:var(--text-xs);color:var(--color-text-muted);font-weight:500}
+    .phone-activity{background:var(--color-primary);border-radius:var(--radius-lg);padding:var(--space-3) var(--space-4);display:flex;align-items:center;justify-content:space-between;color:#fff}
+    .activity-label{font-size:var(--text-xs);opacity:.75;margin-bottom:var(--space-1)}
+    .activity-name{font-family:var(--font-display);font-weight:700;font-size:var(--text-sm)}
+    .activity-badge{background:var(--color-accent);color:oklch(0.2 0.06 130);font-size:var(--text-xs);font-weight:700;padding:var(--space-1) var(--space-3);border-radius:var(--radius-full)}
+    .section{padding-block:clamp(var(--space-12),8vw,var(--space-24))}
+    .section--alt{background:var(--color-surface)}
+    .section-label{font-size:var(--text-xs);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--color-primary);margin-bottom:var(--space-4)}
+    .section-heading{font-size:var(--text-2xl);font-weight:800;letter-spacing:-.04em;color:var(--color-text);margin-bottom:var(--space-4);line-height:1.05}
+    .section-sub{font-size:var(--text-base);color:var(--color-text-muted);max-width:50ch;line-height:1.6}
+    .stats-strip{display:flex;gap:var(--space-8);flex-wrap:wrap;justify-content:center;padding-block:clamp(var(--space-10),4vw,var(--space-16));border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)}
+    .strip-stat{text-align:center}
+    .strip-val{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:800;color:var(--color-text);letter-spacing:-.04em;line-height:1}
+    .strip-val span{color:var(--color-primary)}
+    .strip-label{font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-2)}
+    .features-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-top:clamp(var(--space-10),5vw,var(--space-16))}
+    .feature-card{background:var(--color-surface);border:1px solid oklch(from var(--color-text) l c h/0.08);border-radius:var(--radius-2xl);padding:var(--space-8);transition:box-shadow var(--transition-interactive),transform var(--transition-interactive),border-color var(--transition-interactive)}
+    .feature-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+    .feature-card--large{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);align-items:center}
+    .feature-icon{width:44px;height:44px;border-radius:var(--radius-lg);background:var(--color-primary-highlight);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-5);color:var(--color-primary)}
+    .feature-title{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;color:var(--color-text);margin-bottom:var(--space-2);letter-spacing:-.02em}
+    .feature-desc{font-size:var(--text-base);color:var(--color-text-muted);line-height:1.6;max-width:38ch}
+    .elevation-chart{background:var(--color-bg);border-radius:var(--radius-xl);padding:var(--space-6);border:1px solid var(--color-border)}
+    .elev-label{font-size:var(--text-xs);color:var(--color-text-muted);font-weight:600;margin-bottom:var(--space-4);display:flex;justify-content:space-between}
+    .elev-bars{display:flex;align-items:flex-end;gap:3px;height:60px}
+    .elev-bar{flex:1;border-radius:var(--radius-sm) var(--radius-sm) 0 0;background:linear-gradient(to top,var(--color-primary),oklch(from var(--color-primary) calc(l + 0.2) c h));opacity:.75}
+    .elev-bar:nth-child(odd){opacity:1}
+    .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:var(--space-4);margin-top:clamp(var(--space-10),4vw,var(--space-16))}
+    .testimonial-card{background:var(--color-surface);border:1px solid oklch(from var(--color-text) l c h/0.08);border-radius:var(--radius-2xl);padding:var(--space-6)}
+    .testimonial-stars{display:flex;gap:var(--space-1);margin-bottom:var(--space-4);color:var(--color-accent-dark)}
+    .testimonial-quote{font-size:var(--text-base);color:var(--color-text);line-height:1.65;margin-bottom:var(--space-5);font-style:italic}
+    .testimonial-author{display:flex;align-items:center;gap:var(--space-3)}
+    .author-avatar{width:36px;height:36px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:var(--text-xs);color:#fff;flex-shrink:0}
+    .author-name{font-weight:600;font-size:var(--text-sm);color:var(--color-text)}
+    .author-handle{font-size:var(--text-xs);color:var(--color-text-faint)}
+    .footer{padding-block:var(--space-8);border-top:1px solid var(--color-divider)}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4);max-width:var(--content-wide);margin-inline:auto;padding-inline:var(--space-6)}
+    .footer-copy{font-size:var(--text-xs);color:var(--color-text-faint)}
+    .footer-links{display:flex;gap:var(--space-6)}
+    .footer-links a{font-size:var(--text-xs);color:var(--color-text-faint);text-decoration:none;transition:color var(--transition-interactive)}
+    .footer-links a:hover{color:var(--color-text-muted)}
+    .success-msg{display:none;align-items:center;justify-content:center;gap:var(--space-3);padding:var(--space-4) var(--space-6);background:var(--color-primary-highlight);border:1px solid var(--color-primary);border-radius:var(--radius-full);color:var(--color-primary);font-weight:600;font-size:var(--text-sm);margin-top:var(--space-4);animation:slide-in 0.4s cubic-bezier(0.16,1,0.3,1) both}
+    .success-msg.visible{display:flex}
+    @keyframes slide-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .fade-in{opacity:1}
+    @supports(animation-timeline:scroll()){.fade-in{opacity:0;animation:reveal-fade linear both;animation-timeline:view();animation-range:entry 0% entry 80%}}
+    @keyframes reveal-fade{to{opacity:1}}
+    @media(max-width:720px){.features-grid{grid-template-columns:1fr}.feature-card--large{grid-column:span 1;grid-template-columns:1fr}.header-actions .btn-outline{display:none}.stats-strip{gap:var(--space-6)}}
+    @media(max-width:480px){.waitlist-form{flex-direction:column;align-items:center}.waitlist-input-wrap{max-width:100%}.btn-waitlist{width:100%}}
+  </style>
+</head>
+<body>
+  <a href="#main" class="sr-only">Skip to content</a>
+  <header class="header" id="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="Cycly home">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2"/>
+          <line x1="16" y1="3" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+          <line x1="27.5" y1="9.5" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+          <line x1="27.5" y1="22.5" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+          <line x1="16" y1="29" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+          <line x1="4.5" y1="22.5" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+          <line x1="4.5" y1="9.5" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+          <circle cx="16" cy="16" r="3" fill="#b5e04a" stroke="#1a5c2a" stroke-width="1.5"/>
+        </svg>
+        <span class="logo-wordmark">Cycly</span>
+      </a>
+      <div class="header-actions">
+        <a href="#waitlist-form" class="btn btn-outline">Join waitlist</a>
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          Coming soon &middot; Join the waitlist
+        </div>
+        <h1 class="hero-heading">Cycling, <em>smarter.<br>Every ride.</em></h1>
+        <p class="hero-sub">Cycly is the app built for riders who take their cycling seriously &mdash; from morning commutes to epic climbs. Training plans, live route guidance, performance analytics, and a community that gets it.</p>
+        <form class="waitlist-form" id="waitlist-form" novalidate>
+          <div class="waitlist-input-wrap">
+            <input type="email" class="waitlist-input" id="email-input" placeholder="your@email.com" autocomplete="email" aria-label="Email address" required>
+            <svg class="waitlist-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <button type="submit" class="btn-waitlist">Get early access</button>
+        </form>
+        <p class="hero-note">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          No spam, ever. Unsubscribe anytime.
+        </p>
+        <div id="success-msg" class="success-msg" role="alert" aria-live="polite">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          You're on the list! We'll be in touch soon &#x1F6B4;
+        </div>
+        <div style="display:flex;justify-content:center">
+          <div class="hero-count">
+            <div class="avatar-stack" aria-hidden="true">
+              <div class="avatar"><div class="avatar-inner" style="background:#1a5c2a">J</div></div>
+              <div class="avatar"><div class="avatar-inner" style="background:#2a7a3a">S</div></div>
+              <div class="avatar"><div class="avatar-inner" style="background:#3a9250">M</div></div>
+              <div class="avatar"><div class="avatar-inner" style="background:#4aaa60">A</div></div>
+            </div>
+            <span id="count-display"><strong style="color:var(--color-text)">1,240+</strong> riders already signed up</span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="phone-mockup">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="phone-map">
+                <div class="map-overlay">&#x1F4CD; Box Hill Loop &middot; 38 km</div>
+              </div>
+              <div class="phone-stats">
+                <div class="stat-pill"><div class="stat-val">28.4</div><div class="stat-label">Avg km/h</div></div>
+                <div class="stat-pill"><div class="stat-val">38.1</div><div class="stat-label">Distance</div></div>
+                <div class="stat-pill"><div class="stat-val">740m</div><div class="stat-label">Elevation</div></div>
+              </div>
+              <div class="phone-activity">
+                <div><div class="activity-label">Today's ride</div><div class="activity-name">Box Hill &middot; Zone 3</div></div>
+                <div class="activity-badge">PR!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div>
+      <div class="container--wide">
+        <div class="stats-strip fade-in">
+          <div class="strip-stat"><div class="strip-val"><span>200+</span></div><div class="strip-label">Curated routes</div></div>
+          <div class="strip-stat"><div class="strip-val"><span>12</span> metrics</div><div class="strip-label">Tracked per ride</div></div>
+          <div class="strip-stat"><div class="strip-val"><span>AI&#8209;powered</span></div><div class="strip-label">Training plans</div></div>
+          <div class="strip-stat"><div class="strip-val"><span>iOS &amp; Android</span></div><div class="strip-label">At launch</div></div>
+        </div>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container--wide">
+        <p class="section-label">Features</p>
+        <h2 class="section-heading">Everything you need<br>on the road</h2>
+        <p class="section-sub">Built from the saddle up by riders who've logged thousands of miles and wanted a single app that does it all.</p>
+        <div class="features-grid">
+          <div class="feature-card feature-card--large fade-in">
+            <div>
+              <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+              <h3 class="feature-title">Adaptive Training Plans</h3>
+              <p class="feature-desc">Cycly learns your fitness level, goals, and calendar. Training blocks adapt week by week &mdash; no generic 12-week plan you'll abandon by week three.</p>
+            </div>
+            <div class="elevation-chart" aria-hidden="true">
+              <div class="elev-label"><span>Elevation profile</span><span style="color:var(--color-primary);font-weight:700">+740m</span></div>
+              <div class="elev-bars">
+                <div class="elev-bar" style="height:20%"></div><div class="elev-bar" style="height:28%"></div>
+                <div class="elev-bar" style="height:22%"></div><div class="elev-bar" style="height:45%"></div>
+                <div class="elev-bar" style="height:60%"></div><div class="elev-bar" style="height:75%"></div>
+                <div class="elev-bar" style="height:100%"></div><div class="elev-bar" style="height:88%"></div>
+                <div class="elev-bar" style="height:70%"></div><div class="elev-bar" style="height:55%"></div>
+                <div class="elev-bar" style="height:40%"></div><div class="elev-bar" style="height:30%"></div>
+                <div class="elev-bar" style="height:18%"></div><div class="elev-bar" style="height:10%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-card fade-in">
+            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <h3 class="feature-title">Route Discovery</h3>
+            <p class="feature-desc">Find new roads and trails near you. Filter by distance, elevation, surface type, and difficulty. Every route is rider-verified.</p>
+          </div>
+          <div class="feature-card fade-in">
+            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <h3 class="feature-title">Clubs &amp; Group Rides</h3>
+            <p class="feature-desc">Join local clubs, organise group rides, and share segments with your crew. Cycling is better together.</p>
+          </div>
+          <div class="feature-card fade-in">
+            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <h3 class="feature-title">Performance Insights</h3>
+            <p class="feature-desc">Power, cadence, heart rate, VO2 trends &mdash; all in one dashboard. Know exactly what's working and what isn't.</p>
+          </div>
+          <div class="feature-card fade-in">
+            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3 class="feature-title">Safety Features</h3>
+            <p class="feature-desc">Live location sharing, emergency contacts, and crash detection &mdash; because peace of mind matters on every ride.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--alt">
+      <div class="container--wide">
+        <p class="section-label">Early testers</p>
+        <h2 class="section-heading">Riders love it</h2>
+        <p class="section-sub">We've been testing Cycly with a small group of riders across the UK. Here's what they're saying.</p>
+        <div class="testimonials-grid">
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-quote">"Finally an app that doesn't make me choose between tracking my rides and building a training plan. The adaptive plan feature is genuinely clever."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:var(--color-primary)">JM</div>
+              <div><div class="author-name">Jamie M.</div><div class="author-handle">Club cyclist &middot; Manchester</div></div>
+            </div>
+          </div>
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-quote">"The route discovery is 10&times; better than anything else I've used. Found a brilliant 50 km loop around the Surrey Hills I never knew existed."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#2a7a3a">SC</div>
+              <div><div class="author-name">Sarah C.</div><div class="author-handle">Sportive rider &middot; London</div></div>
+            </div>
+          </div>
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-quote">"The data is there if you want to geek out, but it doesn't overwhelm you. Perfect balance. My commute has literally become a training session."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#3a9250">AR</div>
+              <div><div class="author-name">Alex R.</div><div class="author-handle">Commuter cyclist &middot; Birmingham</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&#169; 2026 Cycly. Built for riders, by riders.</div>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="#" target="_blank" rel="noopener noreferrer">Privacy</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Terms</a>
+        <a href="mailto:hello@cycly.app">Contact</a>
+      </nav>
+    </div>
+  </footer>
+  <script>
+    (function(){
+      const t=document.querySelector('[data-theme-toggle]');
+      const r=document.documentElement;
+      let d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+      r.setAttribute('data-theme',d);
+      function upd(){if(!t)return;t.setAttribute('aria-label','Switch to '+(d==='dark'?'light':'dark')+' mode');t.innerHTML=d==='dark'?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';}
+      upd();
+      t&&t.addEventListener('click',()=>{d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);upd();});
+    })();
+    const hdr=document.getElementById('site-header');
+    window.addEventListener('scroll',()=>hdr.classList.toggle('header--scrolled',scrollY>10),{passive:true});
+    let count=1240;
+    function handleForm(fId,iId,sId){
+      const form=document.getElementById(fId);
+      const inp=document.getElementById(iId);
+      const succ=document.getElementById(sId);
+      if(!form)return;
+      form.addEventListener('submit',function(e){
+        e.preventDefault();
+        const em=inp.value.trim();
+        if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){
+          inp.style.borderColor='#c0392b';inp.style.boxShadow='0 0 0 3px rgba(192,57,43,.15)';
+          inp.focus();
+          setTimeout(()=>{inp.style.borderColor='';inp.style.boxShadow='';},1600);
+          return;
+        }
+        count++;
+        form.style.display='none';
+        succ.classList.add('visible');
+        document.querySelectorAll('#count-display strong').forEach(el=>el.textContent=count.toLocaleString()+'+');
+      });
+    }
+    handleForm('waitlist-form','email-input','success-msg');
+  </script>
+</body>
+</html>
