@@ -44,18 +44,12 @@
       --radius-xl: 1rem;
       --radius-2xl: 1.5rem;
       --radius-full: 9999px;
-      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
-      --color-bg: #b7ceb4;
-      --color-surface: #c4dcc0;
-      --color-surface-2: #cedecd;
-      --color-surface-offset: #a6bf9e;
-      --color-surface-dynamic: #9cb294;
-      --color-divider: #a7ba9d;
-      --color-border: #9cae92;
-      --color-text: #0a0e0a;
-      --color-text-muted: #425241;
-      --color-text-faint: #7b8c7a;
-      --color-text-inverse: #b7ceb4;
+      --transition-interactive: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      --color-bg:#d0d0c8;--color-surface:#d8d8d0;--color-surface-2:#e1e1d9;
+      --color-surface-offset:#c5c5ba;--color-surface-dynamic:#bdbdaf;
+      --color-divider:#babbaf;--color-border:#adad9f;
+      --color-text:#134a20;--color-text-muted:#4f5c4e;--color-text-faint:#97a195;
+      --color-text-inverse:#d0d0c8;
       --color-primary: #134a20;
       --color-primary-hover: #0d3817;
       --color-primary-active: #07260d;
@@ -125,7 +119,11 @@
     *::after {
       box-sizing: border-box;
       margin: 0;
-      padding: 0
+      padding: 0;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    svg, path, circle, rect, polyline, line {
+      stroke: currentColor;
     }
 
     html {
@@ -227,6 +225,17 @@
       border-width: 0
     }
 
+    .waitlist-form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      max-width: var(--content-narrow);
+      margin-inline: auto;
+      margin-top: var(--space-8);
+      position: relative;
+    }
+
     .container {
       max-width: var(--content-default);
       margin-inline: auto;
@@ -254,7 +263,6 @@
       border: 1px solid var(--color-border);
       background: oklch(from var(--color-bg) l c h / 0.5);
       backdrop-filter: blur(12px);
-      transition: color var(--transition-interactive), background var(--transition-interactive), border-color var(--transition-interactive)
     }
 
     .theme-toggle-fixed:hover {
@@ -275,7 +283,7 @@
       text-decoration: none;
       cursor: pointer;
       border: none;
-      transition: background var(--transition-interactive), color var(--transition-interactive), box-shadow var(--transition-interactive), transform var(--transition-interactive)
+      transition: var(--transition-interactive);
     }
 
     .btn-outline {
@@ -299,7 +307,7 @@
       text-align: center;
       color: var(--color-text);
       padding-bottom: var(--space-16);
-      padding-top: 30vh;
+      padding-top: 12vh;
     }
 
     .hero>.container {
@@ -350,7 +358,14 @@
 
     .hero-heading em {
       font-style: normal;
-      color: var(--color-accent);
+      color: var(--color-primary);
+      transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    [data-theme="light"] .hero-heading em {
+      color: #2a7a3a;
+    }
+    [data-theme="light"] img[alt="Cycly"] {
+      filter: invert(1) brightness(0.5);
     }
 
     .hero-sub {
@@ -391,15 +406,14 @@
 
     .waitlist-input {
       width: 100%;
-      padding: var(--space-4) var(--space-5);
-      padding-right: var(--space-10);
+      height: 56px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
       border-radius: var(--radius-full);
-      border: 1.5px solid var(--color-border);
-      background: var(--color-surface-2);
-      color: var(--color-text);
+      padding: 0 var(--space-6) 0 var(--space-12);
       font-size: var(--text-base);
-      transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive);
-      outline: none;
+      color: var(--color-text);
+      box-shadow: var(--shadow-sm);
     }
 
     .waitlist-input::placeholder {
@@ -431,13 +445,12 @@
       cursor: pointer;
       white-space: nowrap;
       flex-shrink: 0;
-      transition: background var(--transition-interactive), box-shadow var(--transition-interactive), transform var(--transition-interactive);
       position: relative;
       z-index: 2;
     }
 
     .btn-waitlist:hover {
-      background: var(--color-accent-dark);
+      background: #0a2d13;
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
     }
@@ -494,12 +507,14 @@
     .avatar-inner {
       width: 100%;
       height: 100%;
+      border-radius: var(--radius-full);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 10px;
       font-weight: 700;
       color: #fff;
+      box-shadow: 0 0 0 2px var(--color-bg);
     }
 
     .hero-visual {
@@ -670,37 +685,43 @@
     }
 
     .stats-strip {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--space-8);
-      flex-wrap: wrap;
-      justify-content: center;
+      max-width: var(--content-wide);
+      margin-inline: auto;
       padding-block: clamp(var(--space-10), 4vw, var(--space-16));
       border-top: 1px solid var(--color-divider);
-      border-bottom: 1px solid var(--color-divider)
+      border-bottom: 1px solid var(--color-divider);
     }
-
     .strip-stat {
-      text-align: center
+      padding-inline: var(--space-4);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid oklch(from var(--color-divider) l c h / 0.5);
     }
-
+    .strip-stat:last-child {
+      border-right: none;
+    }
     .strip-val {
       font-family: var(--font-display);
-      font-size: var(--text-2xl);
-      font-weight: 800;
-      color: var(--color-text);
-      letter-spacing: -.04em;
-      line-height: 1
-    }
-
-    .strip-val span {
-      color: var(--color-primary)
-    }
-
-    .strip-label {
       font-size: var(--text-sm);
       color: var(--color-text-muted);
-      margin-top: var(--space-2)
+      letter-spacing: 0.08em;
+      line-height: 1.35;
+      text-transform: uppercase;
     }
+    .strip-val span {
+      font-size: var(--text-xl);
+      font-weight: 800;
+      color: var(--color-primary);
+      display: block;
+      margin-top: var(--space-2);
+      letter-spacing: -0.02em;
+    }
+    .strip-label { display: none; }
 
     .features-grid {
       display: grid;
@@ -714,7 +735,6 @@
       border: 1px solid oklch(from var(--color-text) l c h/0.08);
       border-radius: var(--radius-2xl);
       padding: var(--space-8);
-      transition: box-shadow var(--transition-interactive), transform var(--transition-interactive), border-color var(--transition-interactive)
     }
 
     .feature-card:hover {
@@ -739,7 +759,7 @@
       align-items: center;
       justify-content: center;
       margin-bottom: var(--space-5);
-      color: var(--color-primary)
+      color: var(--color-primary);
     }
 
     .feature-title {
@@ -762,7 +782,7 @@
       background: var(--color-bg);
       border-radius: var(--radius-xl);
       padding: var(--space-6);
-      border: 1px solid var(--color-border)
+      border: 1px solid var(--color-border);
     }
 
     .elev-label {
@@ -988,9 +1008,13 @@
     </button>
     <section class="hero">
       <div class="container">
+        <img src="./cycly.png" alt="Cycly" width="160" height="160"
+          style="display:block; margin-inline:auto; margin-bottom:var(--space-4);
+                 width:clamp(100px,15vw,160px); height:auto;"
+          loading="eager">
         <h1 class="hero-heading">Elevate your <em>riding life.</em></h1>
-        <p class="hero-sub">More than an app. A private collective for riders who seek freedom, performance, and the
-          perfect road. Designed for those who know the difference between a ride and an experience.</p>
+        <p class="hero-sub">More than an app for riders who want more from the road. Designed for those who know the
+          difference between a ride and an experience.</p>
         <form class="waitlist-form" id="waitlist-form" novalidate>
           <div class="waitlist-input-wrap">
             <input type="email" class="waitlist-input" id="email-input" placeholder="your@email.com"
@@ -1069,7 +1093,6 @@
         <div
           style="width: 1px; height: 100px; background: linear-gradient(to bottom, var(--color-border), transparent); margin-inline: auto; margin-bottom: var(--space-12);">
         </div>
-        <p class="section-label" style="opacity: 0.6; margin-bottom: var(--space-8);">Our Philosophy</p>
         <h2 class="section-heading" style="margin-bottom: var(--space-8); font-size: var(--text-xl);">We believe the
           best rides haven't been found yet.</h2>
         <p class="section-sub"
@@ -1088,20 +1111,13 @@
       <div class="container--wide">
         <div class="stats-strip fade-in" style="border-top: none;">
           <div class="strip-stat">
-            <div class="strip-val"><span>200+</span></div>
-            <div class="strip-label">Founding Routes</div>
+            <div class="strip-val">Ride <span>further</span></div>
           </div>
           <div class="strip-stat">
-            <div class="strip-val"><span>Elite</span> metrics</div>
-            <div class="strip-label">Performance DNA</div>
+            <div class="strip-val">Think <span>clearer</span></div>
           </div>
           <div class="strip-stat">
-            <div class="strip-val"><span>Proprietary</span></div>
-            <div class="strip-label">Training Logic</div>
-          </div>
-          <div class="strip-stat">
-            <div class="strip-val"><span>Strictly</span></div>
-            <div class="strip-label">Private Release</div>
+            <div class="strip-val">Meet the people who make you <span>better</span></div>
           </div>
         </div>
       </div>
