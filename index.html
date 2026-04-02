@@ -45,20 +45,22 @@
       --radius-2xl: 1.5rem;
       --radius-full: 9999px;
       --transition-interactive: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      --color-bg:#d0d0c8;--color-surface:#d8d8d0;--color-surface-2:#e1e1d9;
-      --color-surface-offset:#c5c5ba;--color-surface-dynamic:#bdbdaf;
-      --color-divider:#babbaf;--color-border:#adad9f;
-      --color-text:#134a20;--color-text-muted:#4f5c4e;--color-text-faint:#97a195;
-      --color-text-inverse:#d0d0c8;
-      --color-primary: #134a20;
-      --color-primary-hover: #0d3817;
-      --color-primary-active: #07260d;
-      --color-primary-highlight: #e2ede2;
-      --color-accent: #b5e04a;
-      --color-accent-dark: #8ab82e;
-      --shadow-sm: 0 1px 2px oklch(0.15 0.02 130/0.06);
-      --shadow-md: 0 4px 12px oklch(0.15 0.02 130/0.10);
-      --shadow-lg: 0 12px 32px oklch(0.15 0.02 130/0.15);
+      --color-bg:#F5ECD7;--color-surface:#EDE0C4;--color-surface-2:#E3D4B8;
+      --color-surface-offset:#EBD9B4;--color-surface-dynamic:#E5D0A1;
+      --color-divider:#D2C6A3;--color-border:#C4B592;
+      --color-text:#1A1008;--color-text-muted:#7A6855;--color-text-faint:#9A8A78;
+      --color-text-inverse:#F5ECD7;
+      --color-primary: #1A1008;
+      --color-primary-hover: #3D2614;
+      --color-primary-active: #000000;
+      --color-primary-highlight: #F2E6D0;
+      --color-accent: #9B5E2A;
+      --color-accent-dark: #8C6840;
+      --color-bronze: #8C6840;
+      --color-premium-blue: #1A5276;
+      --shadow-sm: 0 1px 2px oklch(0.15 0.02 45/0.06);
+      --shadow-md: 0 4px 12px oklch(0.15 0.02 45/0.10);
+      --shadow-lg: 0 12px 32px oklch(0.15 0.02 45/0.15);
       --content-narrow: 640px;
       --content-default: 960px;
       --content-wide: 1200px;
@@ -67,23 +69,25 @@
     }
 
     [data-theme="dark"] {
-      --color-bg: #111410;
-      --color-surface: #161814;
-      --color-surface-2: #1a1c17;
-      --color-surface-offset: #1e2019;
-      --color-surface-dynamic: #262820;
-      --color-divider: #2e3028;
-      --color-border: #38392f;
-      --color-text: #d4d5cc;
-      --color-text-muted: #808175;
-      --color-text-faint: #565750;
-      --color-text-inverse: #1a1c14;
-      --color-primary: #5aaa6a;
-      --color-primary-hover: #4a9258;
-      --color-primary-active: #3a7a46;
-      --color-primary-highlight: #2a3a2a;
-      --color-accent: #c8f060;
-      --color-accent-dark: #a8cc45;
+      --color-bg: #12100E;
+      --color-surface: #1C1815;
+      --color-surface-2: #2A2118;
+      --color-surface-offset: #352B21;
+      --color-surface-dynamic: #3F3327;
+      --color-divider: #3F3327;
+      --color-border: #4A3E31;
+      --color-text: #F2E6D0;
+      --color-text-muted: #9A8A78;
+      --color-text-faint: #7A6855;
+      --color-text-inverse: #12100E;
+      --color-primary: #F2E6D0;
+      --color-primary-hover: #EBD9B4;
+      --color-primary-active: #DCD1B0;
+      --color-primary-highlight: #352B21;
+      --color-accent: #B87840;
+      --color-accent-dark: #B08A60;
+      --color-bronze: #B08A60;
+      --color-premium-blue: #2E86C1;
       --shadow-sm: 0 1px 2px oklch(0 0 0/0.25);
       --shadow-md: 0 4px 12px oklch(0 0 0/0.35);
       --shadow-lg: 0 12px 32px oklch(0 0 0/0.5);
@@ -91,23 +95,25 @@
 
     @media(prefers-color-scheme:dark) {
       :root:not([data-theme]) {
-        --color-bg: #111410;
-        --color-surface: #161814;
-        --color-surface-2: #1a1c17;
-        --color-surface-offset: #1e2019;
-        --color-surface-dynamic: #262820;
-        --color-divider: #2e3028;
-        --color-border: #38392f;
-        --color-text: #d4d5cc;
-        --color-text-muted: #808175;
-        --color-text-faint: #565750;
-        --color-text-inverse: #1a1c14;
-        --color-primary: #5aaa6a;
-        --color-primary-hover: #4a9258;
-        --color-primary-active: #3a7a46;
-        --color-primary-highlight: #2a3a2a;
-        --color-accent: #c8f060;
-        --color-accent-dark: #a8cc45;
+        --color-bg: #12100E;
+        --color-surface: #1C1815;
+        --color-surface-2: #2A2118;
+        --color-surface-offset: #352B21;
+        --color-surface-dynamic: #3F3327;
+        --color-divider: #3F3327;
+        --color-border: #4A3E31;
+        --color-text: #F2E6D0;
+        --color-text-muted: #9A8A78;
+        --color-text-faint: #7A6855;
+        --color-text-inverse: #12100E;
+        --color-primary: #F2E6D0;
+        --color-primary-hover: #EBD9B4;
+        --color-primary-active: #DCD1B0;
+        --color-primary-highlight: #352B21;
+        --color-accent: #B87840;
+        --color-accent-dark: #B08A60;
+        --color-bronze: #B08A60;
+        --color-premium-blue: #2E86C1;
         --shadow-sm: 0 1px 2px oklch(0 0 0/0.25);
         --shadow-md: 0 4px 12px oklch(0 0 0/0.35);
         --shadow-lg: 0 12px 32px oklch(0 0 0/0.5);
@@ -358,14 +364,11 @@
 
     .hero-heading em {
       font-style: normal;
-      color: var(--color-primary);
+      color: var(--color-accent);
       transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    [data-theme="light"] .hero-heading em {
-      color: #2a7a3a;
-    }
     [data-theme="light"] img[alt="Cycly"] {
-      filter: invert(1) brightness(0.5);
+      filter: brightness(0.15);
     }
 
     .hero-sub {
@@ -443,7 +446,7 @@
       font-size: var(--text-base);
       font-weight: 700;
       background: var(--color-primary);
-      color: #fff;
+      color: var(--color-text-inverse);
       border-radius: var(--radius-full);
       border: none;
       cursor: pointer;
@@ -454,7 +457,7 @@
     }
 
     .btn-waitlist:hover {
-      background: #0a2d13;
+      background: var(--color-primary-hover);
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
     }
@@ -517,7 +520,7 @@
       justify-content: center;
       font-size: 10px;
       font-weight: 700;
-      color: #fff;
+      color: var(--color-text-inverse);
       box-shadow: 0 0 0 2px var(--color-bg);
     }
 
@@ -547,7 +550,7 @@
       background: var(--color-surface);
       border-radius: 2.5rem;
       border: 1.5px solid var(--color-border);
-      box-shadow: var(--shadow-lg), 0 40px 80px oklch(0.15 0.05 140/0.12);
+      box-shadow: var(--shadow-lg), 0 40px 80px oklch(0.15 0.05 45/0.12);
       overflow: hidden
     }
 
@@ -567,7 +570,7 @@
     .phone-map {
       border-radius: var(--radius-xl);
       height: 180px;
-      background: linear-gradient(160deg, oklch(0.70 0.12 145) 0%, oklch(0.60 0.10 160) 40%, oklch(0.45 0.09 150) 100%);
+      background: linear-gradient(160deg, #9B5E2A 0%, #8C6840 40%, #1A1008 100%);
       position: relative;
       overflow: hidden;
       margin-bottom: var(--space-4)
@@ -577,7 +580,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 180'%3E%3Cpath d='M 20 140 Q 60 80 120 100 T 220 60 T 320 80' fill='none' stroke='rgba(255,255,255,0.6)' stroke-width='3' stroke-linecap='round' stroke-dasharray='6 4'/%3E%3Ccircle cx='320' cy='80' r='6' fill='%23b5e04a'/%3E%3Ccircle cx='320' cy='80' r='11' fill='rgba(181,224,74,0.3)'/%3E%3C/svg%3E") no-repeat center/cover
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 180'%3E%3Cpath d='M 20 140 Q 60 80 120 100 T 220 60 T 320 80' fill='none' stroke='rgba(255,255,255,0.6)' stroke-width='3' stroke-linecap='round' stroke-dasharray='6 4'/%3E%3Ccircle cx='320' cy='80' r='6' fill='%23B87840'/%3E%3Ccircle cx='320' cy='80' r='11' fill='rgba(184,120,64,0.3)'/%3E%3C/svg%3E") no-repeat center/cover
     }
 
     .map-overlay {
@@ -625,13 +628,13 @@
     }
 
     .phone-activity {
-      background: var(--color-primary);
+      background: var(--color-accent);
       border-radius: var(--radius-lg);
       padding: var(--space-3) var(--space-4);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      color: #fff
+      color: var(--color-text-inverse)
     }
 
     .activity-label {
@@ -647,8 +650,8 @@
     }
 
     .activity-badge {
-      background: var(--color-accent);
-      color: oklch(0.2 0.06 130);
+      background: var(--color-primary);
+      color: var(--color-bg);
       font-size: var(--text-xs);
       font-weight: 700;
       padding: var(--space-1) var(--space-3);
@@ -809,7 +812,7 @@
     .elev-bar {
       flex: 1;
       border-radius: var(--radius-sm) var(--radius-sm) 0 0;
-      background: linear-gradient(to top, var(--color-primary), oklch(from var(--color-primary) calc(l + 0.2) c h));
+      background: linear-gradient(to top, var(--color-premium-blue), oklch(from var(--color-premium-blue) calc(l + 0.2) c h));
       opacity: .75
     }
 
@@ -1057,16 +1060,16 @@
           <div class="hero-count">
             <div class="avatar-stack" aria-hidden="true">
               <div class="avatar">
-                <div class="avatar-inner" style="background:#1a5c2a">J</div>
+                <div class="avatar-inner" style="background:var(--color-primary)">J</div>
               </div>
               <div class="avatar">
-                <div class="avatar-inner" style="background:#2a7a3a">S</div>
+                <div class="avatar-inner" style="background:var(--color-accent)">S</div>
               </div>
               <div class="avatar">
-                <div class="avatar-inner" style="background:#3a9250">M</div>
+                <div class="avatar-inner" style="background:var(--color-bronze)">M</div>
               </div>
               <div class="avatar">
-                <div class="avatar-inner" style="background:#4aaa60">A</div>
+                <div class="avatar-inner" style="background:var(--color-text-muted)">A</div>
               </div>
             </div>
             <span id="count-display"><strong style="color:var(--color-text)">1,240+</strong> founding riders are
@@ -1236,7 +1239,7 @@
             <p class="testimonial-quote">"Cycly has changed the way I see the road. It's not just tracking; it's an
               elevation of the entire riding experience."</p>
             <div class="testimonial-author">
-              <div class="author-avatar" style="background:var(--color-primary)">JM</div>
+              <div class="author-avatar" style="background:var(--color-bg); color:var(--color-text); border: 1.2px solid var(--color-border)">JM</div>
               <div>
                 <div class="author-name">James M.</div>
                 <div class="author-handle">Founding Rider &middot; London</div>
@@ -1248,7 +1251,7 @@
             <p class="testimonial-quote">"The Route Discovery feels like having a local pro guide you through the
               best-kept secrets of the hills. Truly world-class."</p>
             <div class="testimonial-author">
-              <div class="author-avatar" style="background:#2a7a3a">SC</div>
+              <div class="author-avatar" style="background:var(--color-accent)">SC</div>
               <div>
                 <div class="author-name">Sienna C.</div>
                 <div class="author-handle">Endurance Cyclist &middot; Peak District</div>
@@ -1260,7 +1263,7 @@
             <p class="testimonial-quote">"A rare tool that understands the soul of cycling. Minimalist, precise, and
               profoundly effective for the dedicated."</p>
             <div class="testimonial-author">
-              <div class="author-avatar" style="background:#3a9250">AR</div>
+              <div class="author-avatar" style="background:var(--color-bronze)">AR</div>
               <div>
                 <div class="author-name">Adrian R.</div>
                 <div class="author-handle">Performance Lead &middot; Girona</div>
