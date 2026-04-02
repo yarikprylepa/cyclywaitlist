@@ -1,79 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./cycly.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="./cycly.png">
   <title>Cycly — Elevate Your Riding Life</title>
-  <meta name="description" content="A private collective for riders who demand more. Experience the perfect blend of performance, discovery, and connection. Request early access.">
+  <meta name="description"
+    content="A private collective for riders who demand more. Experience the perfect blend of performance, discovery, and connection. Request early access.">
   <meta property="og:title" content="Cycly — The Art of the Ride">
-  <meta property="og:description" content="Join the founding riders. A premium cycling experience built for the dedicated.">
+  <meta property="og:description"
+    content="Join the founding riders. A premium cycling experience built for the dedicated.">
   <meta property="og:type" content="website">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap"
+    rel="stylesheet">
 
   <style>
     :root {
-      --text-xs:   clamp(0.75rem,0.7rem + 0.25vw,0.875rem);
-      --text-sm:   clamp(0.875rem,0.8rem + 0.35vw,1rem);
-      --text-base: clamp(1rem,0.95rem + 0.25vw,1.125rem);
-      --text-lg:   clamp(1.125rem,1rem + 0.75vw,1.5rem);
-      --text-xl:   clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
-      --text-2xl:  clamp(2rem,1.2rem + 2.5vw,3.5rem);
-      --text-3xl:  clamp(2.5rem,1rem + 4vw,5rem);
-      --text-hero: clamp(3rem,0.5rem + 7vw,8rem);
-      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;
-      --space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;
-      --space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;
-      --radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;
-      --radius-xl:1rem;--radius-2xl:1.5rem;--radius-full:9999px;
-      --transition-interactive:180ms cubic-bezier(0.16,1,0.3,1);
-      --color-bg:#b7ceb4;--color-surface:#c4dcc0;--color-surface-2:#cedecd;
-      --color-surface-offset:#a6bf9e;--color-surface-dynamic:#9cb294;
-      --color-divider:#a7ba9d;--color-border:#9cae92;
-      --color-text:#0a0e0a;--color-text-muted:#425241;--color-text-faint:#7b8c7a;
-      --color-text-inverse:#b7ceb4;
-      --color-primary:#134a20;--color-primary-hover:#0d3817;--color-primary-active:#07260d;
-      --color-primary-highlight:#e2ede2;
-      --color-accent:#b5e04a;--color-accent-dark:#8ab82e;
-      --shadow-sm:0 1px 2px oklch(0.15 0.02 130/0.06);
-      --shadow-md:0 4px 12px oklch(0.15 0.02 130/0.10);
-      --shadow-lg:0 12px 32px oklch(0.15 0.02 130/0.15);
-      --content-narrow:640px;--content-default:960px;--content-wide:1200px;
-      --font-display:'Cabinet Grotesk','Helvetica Neue',sans-serif;
-      --font-body:'Satoshi','Inter',sans-serif;
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-3xl: clamp(2.5rem, 1rem + 4vw, 5rem);
+      --text-hero: clamp(3rem, 0.5rem + 7vw, 8rem);
+      --space-1: .25rem;
+      --space-2: .5rem;
+      --space-3: .75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --radius-sm: .375rem;
+      --radius-md: .5rem;
+      --radius-lg: .75rem;
+      --radius-xl: 1rem;
+      --radius-2xl: 1.5rem;
+      --radius-full: 9999px;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      --color-bg: #b7ceb4;
+      --color-surface: #c4dcc0;
+      --color-surface-2: #cedecd;
+      --color-surface-offset: #a6bf9e;
+      --color-surface-dynamic: #9cb294;
+      --color-divider: #a7ba9d;
+      --color-border: #9cae92;
+      --color-text: #0a0e0a;
+      --color-text-muted: #425241;
+      --color-text-faint: #7b8c7a;
+      --color-text-inverse: #b7ceb4;
+      --color-primary: #134a20;
+      --color-primary-hover: #0d3817;
+      --color-primary-active: #07260d;
+      --color-primary-highlight: #e2ede2;
+      --color-accent: #b5e04a;
+      --color-accent-dark: #8ab82e;
+      --shadow-sm: 0 1px 2px oklch(0.15 0.02 130/0.06);
+      --shadow-md: 0 4px 12px oklch(0.15 0.02 130/0.10);
+      --shadow-lg: 0 12px 32px oklch(0.15 0.02 130/0.15);
+      --content-narrow: 640px;
+      --content-default: 960px;
+      --content-wide: 1200px;
+      --font-display: 'Cabinet Grotesk', 'Helvetica Neue', sans-serif;
+      --font-body: 'Satoshi', 'Inter', sans-serif;
     }
+
     [data-theme="dark"] {
-      --color-bg:#111410;--color-surface:#161814;--color-surface-2:#1a1c17;
-      --color-surface-offset:#1e2019;--color-surface-dynamic:#262820;
-      --color-divider:#2e3028;--color-border:#38392f;
-      --color-text:#d4d5cc;--color-text-muted:#808175;--color-text-faint:#565750;
-      --color-text-inverse:#1a1c14;
-      --color-primary:#5aaa6a;--color-primary-hover:#4a9258;--color-primary-active:#3a7a46;
-      --color-primary-highlight:#2a3a2a;
-      --color-accent:#c8f060;--color-accent-dark:#a8cc45;
-      --shadow-sm:0 1px 2px oklch(0 0 0/0.25);
-      --shadow-md:0 4px 12px oklch(0 0 0/0.35);
-      --shadow-lg:0 12px 32px oklch(0 0 0/0.5);
+      --color-bg: #111410;
+      --color-surface: #161814;
+      --color-surface-2: #1a1c17;
+      --color-surface-offset: #1e2019;
+      --color-surface-dynamic: #262820;
+      --color-divider: #2e3028;
+      --color-border: #38392f;
+      --color-text: #d4d5cc;
+      --color-text-muted: #808175;
+      --color-text-faint: #565750;
+      --color-text-inverse: #1a1c14;
+      --color-primary: #5aaa6a;
+      --color-primary-hover: #4a9258;
+      --color-primary-active: #3a7a46;
+      --color-primary-highlight: #2a3a2a;
+      --color-accent: #c8f060;
+      --color-accent-dark: #a8cc45;
+      --shadow-sm: 0 1px 2px oklch(0 0 0/0.25);
+      --shadow-md: 0 4px 12px oklch(0 0 0/0.35);
+      --shadow-lg: 0 12px 32px oklch(0 0 0/0.5);
     }
-    @media(prefers-color-scheme:dark){
-      :root:not([data-theme]){
-        --color-bg:#111410;--color-surface:#161814;--color-surface-2:#1a1c17;
-        --color-surface-offset:#1e2019;--color-surface-dynamic:#262820;
-        --color-divider:#2e3028;--color-border:#38392f;
-        --color-text:#d4d5cc;--color-text-muted:#808175;--color-text-faint:#565750;
-        --color-text-inverse:#1a1c14;
-        --color-primary:#5aaa6a;--color-primary-hover:#4a9258;--color-primary-active:#3a7a46;
-        --color-primary-highlight:#2a3a2a;
-        --color-accent:#c8f060;--color-accent-dark:#a8cc45;
-        --shadow-sm:0 1px 2px oklch(0 0 0/0.25);
-        --shadow-md:0 4px 12px oklch(0 0 0/0.35);
-        --shadow-lg:0 12px 32px oklch(0 0 0/0.5);
+
+    @media(prefers-color-scheme:dark) {
+      :root:not([data-theme]) {
+        --color-bg: #111410;
+        --color-surface: #161814;
+        --color-surface-2: #1a1c17;
+        --color-surface-offset: #1e2019;
+        --color-surface-dynamic: #262820;
+        --color-divider: #2e3028;
+        --color-border: #38392f;
+        --color-text: #d4d5cc;
+        --color-text-muted: #808175;
+        --color-text-faint: #565750;
+        --color-text-inverse: #1a1c14;
+        --color-primary: #5aaa6a;
+        --color-primary-hover: #4a9258;
+        --color-primary-active: #3a7a46;
+        --color-primary-highlight: #2a3a2a;
+        --color-accent: #c8f060;
+        --color-accent-dark: #a8cc45;
+        --shadow-sm: 0 1px 2px oklch(0 0 0/0.25);
+        --shadow-md: 0 4px 12px oklch(0 0 0/0.35);
+        --shadow-lg: 0 12px 32px oklch(0 0 0/0.5);
       }
     }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth;scroll-padding-top:var(--space-16)}
-    body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background-color:var(--color-bg);overflow-x:hidden;isolation:isolate}
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--space-16)
+    }
+
+    body {
+      min-height: 100dvh;
+      line-height: 1.6;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      overflow-x: hidden;
+      isolation: isolate
+    }
+
     .video-background {
       position: fixed;
       inset: 0;
@@ -86,22 +158,137 @@
       filter: blur(6px);
       transform: scale(1.1);
     }
-    img,svg{display:block;max-width:100%}
-    h1,h2,h3,h4{text-wrap:balance;line-height:1.1;font-family:var(--font-display)}
-    p,li{text-wrap:pretty}
-    input,button,textarea,select{font:inherit;color:inherit}
-    button{cursor:pointer;background:none;border:none}
-    ::selection{background:oklch(from var(--color-primary) l c h/0.2);color:var(--color-text)}
-    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
-    .container{max-width:var(--content-default);margin-inline:auto;padding-inline:var(--space-6)}
-    .container--wide{max-width:var(--content-wide);margin-inline:auto;padding-inline:var(--space-6)}
-    .theme-toggle-fixed{position:fixed;bottom:var(--space-6);right:var(--space-6);z-index:100;width:40px;height:40px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;color:var(--color-text-muted);border:1px solid var(--color-border);background:oklch(from var(--color-bg) l c h / 0.5);backdrop-filter:blur(12px);transition:color var(--transition-interactive),background var(--transition-interactive),border-color var(--transition-interactive)}
-    .theme-toggle-fixed:hover{color:var(--color-text);background:var(--color-surface-offset)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);padding:var(--space-3) var(--space-6);border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:600;letter-spacing:-0.01em;text-decoration:none;cursor:pointer;border:none;transition:background var(--transition-interactive),color var(--transition-interactive),box-shadow var(--transition-interactive),transform var(--transition-interactive)}
-    .btn-outline{background:transparent;color:var(--color-text);border:1.5px solid var(--color-border)}
-    .btn-outline:hover{border-color:var(--color-primary);color:var(--color-primary)}
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      text-wrap: balance;
+      line-height: 1.1;
+      font-family: var(--font-display)
+    }
+
+    p,
+    li {
+      text-wrap: pretty
+    }
+
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+      color: inherit
+    }
+
+    button {
+      cursor: pointer;
+      background: none;
+      border: none
+    }
+
+    ::selection {
+      background: oklch(from var(--color-primary) l c h/0.2);
+      color: var(--color-text)
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm)
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important
+      }
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0
+    }
+
+    .container {
+      max-width: var(--content-default);
+      margin-inline: auto;
+      padding-inline: var(--space-6)
+    }
+
+    .container--wide {
+      max-width: var(--content-wide);
+      margin-inline: auto;
+      padding-inline: var(--space-6)
+    }
+
+    .theme-toggle-fixed {
+      position: fixed;
+      bottom: var(--space-6);
+      right: var(--space-6);
+      z-index: 100;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-muted);
+      border: 1px solid var(--color-border);
+      background: oklch(from var(--color-bg) l c h / 0.5);
+      backdrop-filter: blur(12px);
+      transition: color var(--transition-interactive), background var(--transition-interactive), border-color var(--transition-interactive)
+    }
+
+    .theme-toggle-fixed:hover {
+      color: var(--color-text);
+      background: var(--color-surface-offset)
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background var(--transition-interactive), color var(--transition-interactive), box-shadow var(--transition-interactive), transform var(--transition-interactive)
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--color-text);
+      border: 1.5px solid var(--color-border)
+    }
+
+    .btn-outline:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary)
+    }
+
     .hero {
       position: relative;
       overflow: hidden;
@@ -114,11 +301,13 @@
       padding-bottom: var(--space-16);
       padding-top: 30vh;
     }
-    .hero > .container {
+
+    .hero>.container {
       position: relative;
       z-index: 2;
       width: 100%;
     }
+
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -319,67 +508,473 @@
       z-index: 2;
     }
 
-    @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.85)}}
-    .phone-mockup{width:min(340px,90vw);margin-inline:auto;background:var(--color-surface);border-radius:2.5rem;border:1.5px solid var(--color-border);box-shadow:var(--shadow-lg),0 40px 80px oklch(0.15 0.05 140/0.12);overflow:hidden}
-    .phone-notch{width:120px;height:32px;background:var(--color-bg);border-radius:0 0 var(--radius-xl) var(--radius-xl);margin-inline:auto;margin-bottom:var(--space-2)}
-    .phone-screen{padding:var(--space-4)}
-    .phone-map{border-radius:var(--radius-xl);height:180px;background:linear-gradient(160deg,oklch(0.70 0.12 145) 0%,oklch(0.60 0.10 160) 40%,oklch(0.45 0.09 150) 100%);position:relative;overflow:hidden;margin-bottom:var(--space-4)}
-    .phone-map::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 180'%3E%3Cpath d='M 20 140 Q 60 80 120 100 T 220 60 T 320 80' fill='none' stroke='rgba(255,255,255,0.6)' stroke-width='3' stroke-linecap='round' stroke-dasharray='6 4'/%3E%3Ccircle cx='320' cy='80' r='6' fill='%23b5e04a'/%3E%3Ccircle cx='320' cy='80' r='11' fill='rgba(181,224,74,0.3)'/%3E%3C/svg%3E") no-repeat center/cover}
-    .map-overlay{position:absolute;top:var(--space-3);left:var(--space-3);background:oklch(0 0 0/0.4);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:var(--radius-md);padding:var(--space-2) var(--space-3);color:#fff;font-size:var(--text-xs);font-weight:600}
-    .phone-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-2);margin-bottom:var(--space-4)}
-    .stat-pill{background:var(--color-surface-offset);border-radius:var(--radius-lg);padding:var(--space-3) var(--space-2);text-align:center}
-    .stat-val{font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;color:var(--color-text);letter-spacing:-.03em;line-height:1;margin-bottom:var(--space-1)}
-    .stat-label{font-size:var(--text-xs);color:var(--color-text-muted);font-weight:500}
-    .phone-activity{background:var(--color-primary);border-radius:var(--radius-lg);padding:var(--space-3) var(--space-4);display:flex;align-items:center;justify-content:space-between;color:#fff}
-    .activity-label{font-size:var(--text-xs);opacity:.75;margin-bottom:var(--space-1)}
-    .activity-name{font-family:var(--font-display);font-weight:700;font-size:var(--text-sm)}
-    .activity-badge{background:var(--color-accent);color:oklch(0.2 0.06 130);font-size:var(--text-xs);font-weight:700;padding:var(--space-1) var(--space-3);border-radius:var(--radius-full)}
-    .section{padding-block:clamp(var(--space-12),8vw,var(--space-24))}
-    .section--alt{background:var(--color-surface)}
-    .section-label{font-size:var(--text-xs);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--color-primary);margin-bottom:var(--space-4)}
-    .section-heading{font-size:var(--text-2xl);font-weight:800;letter-spacing:-.04em;color:var(--color-text);margin-bottom:var(--space-4);line-height:1.05}
-    .section-sub{font-size:var(--text-base);color:var(--color-text-muted);max-width:50ch;line-height:1.6}
-    .stats-strip{display:flex;gap:var(--space-8);flex-wrap:wrap;justify-content:center;padding-block:clamp(var(--space-10),4vw,var(--space-16));border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)}
-    .strip-stat{text-align:center}
-    .strip-val{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:800;color:var(--color-text);letter-spacing:-.04em;line-height:1}
-    .strip-val span{color:var(--color-primary)}
-    .strip-label{font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-2)}
-    .features-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-top:clamp(var(--space-10),5vw,var(--space-16))}
-    .feature-card{background:var(--color-surface);border:1px solid oklch(from var(--color-text) l c h/0.08);border-radius:var(--radius-2xl);padding:var(--space-8);transition:box-shadow var(--transition-interactive),transform var(--transition-interactive),border-color var(--transition-interactive)}
-    .feature-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
-    .feature-card--large{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);align-items:center}
-    .feature-icon{width:44px;height:44px;border-radius:var(--radius-lg);background:var(--color-primary-highlight);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-5);color:var(--color-primary)}
-    .feature-title{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;color:var(--color-text);margin-bottom:var(--space-2);letter-spacing:-.02em}
-    .feature-desc{font-size:var(--text-base);color:var(--color-text-muted);line-height:1.6;max-width:38ch}
-    .elevation-chart{background:var(--color-bg);border-radius:var(--radius-xl);padding:var(--space-6);border:1px solid var(--color-border)}
-    .elev-label{font-size:var(--text-xs);color:var(--color-text-muted);font-weight:600;margin-bottom:var(--space-4);display:flex;justify-content:space-between}
-    .elev-bars{display:flex;align-items:flex-end;gap:3px;height:60px}
-    .elev-bar{flex:1;border-radius:var(--radius-sm) var(--radius-sm) 0 0;background:linear-gradient(to top,var(--color-primary),oklch(from var(--color-primary) calc(l + 0.2) c h));opacity:.75}
-    .elev-bar:nth-child(odd){opacity:1}
-    .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:var(--space-4);margin-top:clamp(var(--space-10),4vw,var(--space-16))}
-    .testimonial-card{background:var(--color-surface);border:1px solid oklch(from var(--color-text) l c h/0.08);border-radius:var(--radius-2xl);padding:var(--space-6)}
-    .testimonial-stars{display:flex;gap:var(--space-1);margin-bottom:var(--space-4);color:var(--color-accent-dark)}
-    .testimonial-quote{font-size:var(--text-base);color:var(--color-text);line-height:1.65;margin-bottom:var(--space-5);font-style:italic}
-    .testimonial-author{display:flex;align-items:center;gap:var(--space-3)}
-    .author-avatar{width:36px;height:36px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:var(--text-xs);color:#fff;flex-shrink:0}
-    .author-name{font-weight:600;font-size:var(--text-sm);color:var(--color-text)}
-    .author-handle{font-size:var(--text-xs);color:var(--color-text-faint)}
-    .footer{padding-block:var(--space-8);border-top:1px solid var(--color-divider)}
-    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4);max-width:var(--content-wide);margin-inline:auto;padding-inline:var(--space-6)}
-    .footer-copy{font-size:var(--text-xs);color:var(--color-text-faint)}
-    .footer-links{display:flex;gap:var(--space-6)}
-    .footer-links a{font-size:var(--text-xs);color:var(--color-text-faint);text-decoration:none;transition:color var(--transition-interactive)}
-    .footer-links a:hover{color:var(--color-text-muted)}
-    .success-msg{display:none;align-items:center;justify-content:center;gap:var(--space-3);padding:var(--space-4) var(--space-6);background:var(--color-primary-highlight);border:1px solid var(--color-primary);border-radius:var(--radius-full);color:var(--color-primary);font-weight:600;font-size:var(--text-sm);margin-top:var(--space-4);animation:slide-in 0.4s cubic-bezier(0.16,1,0.3,1) both}
-    .success-msg.visible{display:flex}
-    @keyframes slide-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-    .fade-in{opacity:1}
-    @supports(animation-timeline:scroll()){.fade-in{opacity:0;animation:reveal-fade linear both;animation-timeline:view();animation-range:entry 0% entry 80%}}
-    @keyframes reveal-fade{to{opacity:1}}
-    @media(max-width:720px){.features-grid{grid-template-columns:1fr}.feature-card--large{grid-column:span 1;grid-template-columns:1fr}.header-actions .btn-outline{display:none}.stats-strip{gap:var(--space-6)}}
-    @media(max-width:480px){.waitlist-form{flex-direction:column;align-items:center}.waitlist-input-wrap{max-width:100%}.btn-waitlist{width:100%}}
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: .6;
+        transform: scale(.85)
+      }
+    }
+
+    .phone-mockup {
+      width: min(340px, 90vw);
+      margin-inline: auto;
+      background: var(--color-surface);
+      border-radius: 2.5rem;
+      border: 1.5px solid var(--color-border);
+      box-shadow: var(--shadow-lg), 0 40px 80px oklch(0.15 0.05 140/0.12);
+      overflow: hidden
+    }
+
+    .phone-notch {
+      width: 120px;
+      height: 32px;
+      background: var(--color-bg);
+      border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+      margin-inline: auto;
+      margin-bottom: var(--space-2)
+    }
+
+    .phone-screen {
+      padding: var(--space-4)
+    }
+
+    .phone-map {
+      border-radius: var(--radius-xl);
+      height: 180px;
+      background: linear-gradient(160deg, oklch(0.70 0.12 145) 0%, oklch(0.60 0.10 160) 40%, oklch(0.45 0.09 150) 100%);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: var(--space-4)
+    }
+
+    .phone-map::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 180'%3E%3Cpath d='M 20 140 Q 60 80 120 100 T 220 60 T 320 80' fill='none' stroke='rgba(255,255,255,0.6)' stroke-width='3' stroke-linecap='round' stroke-dasharray='6 4'/%3E%3Ccircle cx='320' cy='80' r='6' fill='%23b5e04a'/%3E%3Ccircle cx='320' cy='80' r='11' fill='rgba(181,224,74,0.3)'/%3E%3C/svg%3E") no-repeat center/cover
+    }
+
+    .map-overlay {
+      position: absolute;
+      top: var(--space-3);
+      left: var(--space-3);
+      background: oklch(0 0 0/0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: var(--radius-md);
+      padding: var(--space-2) var(--space-3);
+      color: #fff;
+      font-size: var(--text-xs);
+      font-weight: 600
+    }
+
+    .phone-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-2);
+      margin-bottom: var(--space-4)
+    }
+
+    .stat-pill {
+      background: var(--color-surface-offset);
+      border-radius: var(--radius-lg);
+      padding: var(--space-3) var(--space-2);
+      text-align: center
+    }
+
+    .stat-val {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 800;
+      color: var(--color-text);
+      letter-spacing: -.03em;
+      line-height: 1;
+      margin-bottom: var(--space-1)
+    }
+
+    .stat-label {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      font-weight: 500
+    }
+
+    .phone-activity {
+      background: var(--color-primary);
+      border-radius: var(--radius-lg);
+      padding: var(--space-3) var(--space-4);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff
+    }
+
+    .activity-label {
+      font-size: var(--text-xs);
+      opacity: .75;
+      margin-bottom: var(--space-1)
+    }
+
+    .activity-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: var(--text-sm)
+    }
+
+    .activity-badge {
+      background: var(--color-accent);
+      color: oklch(0.2 0.06 130);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full)
+    }
+
+    .section {
+      padding-block: clamp(var(--space-12), 8vw, var(--space-24))
+    }
+
+    .section--alt {
+      background: var(--color-surface)
+    }
+
+    .section-label {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--space-4)
+    }
+
+    .section-heading {
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      color: var(--color-text);
+      margin-bottom: var(--space-4);
+      line-height: 1.05
+    }
+
+    .section-sub {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      max-width: 50ch;
+      line-height: 1.6
+    }
+
+    .stats-strip {
+      display: flex;
+      gap: var(--space-8);
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-block: clamp(var(--space-10), 4vw, var(--space-16));
+      border-top: 1px solid var(--color-divider);
+      border-bottom: 1px solid var(--color-divider)
+    }
+
+    .strip-stat {
+      text-align: center
+    }
+
+    .strip-val {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      color: var(--color-text);
+      letter-spacing: -.04em;
+      line-height: 1
+    }
+
+    .strip-val span {
+      color: var(--color-primary)
+    }
+
+    .strip-label {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-top: var(--space-2)
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+      margin-top: clamp(var(--space-10), 5vw, var(--space-16))
+    }
+
+    .feature-card {
+      background: var(--color-surface);
+      border: 1px solid oklch(from var(--color-text) l c h/0.08);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-8);
+      transition: box-shadow var(--transition-interactive), transform var(--transition-interactive), border-color var(--transition-interactive)
+    }
+
+    .feature-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px)
+    }
+
+    .feature-card--large {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+      align-items: center
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-lg);
+      background: var(--color-primary-highlight);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-5);
+      color: var(--color-primary)
+    }
+
+    .feature-title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: var(--space-2);
+      letter-spacing: -.02em
+    }
+
+    .feature-desc {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      max-width: 38ch
+    }
+
+    .elevation-chart {
+      background: var(--color-bg);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      border: 1px solid var(--color-border)
+    }
+
+    .elev-label {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      font-weight: 600;
+      margin-bottom: var(--space-4);
+      display: flex;
+      justify-content: space-between
+    }
+
+    .elev-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 60px
+    }
+
+    .elev-bar {
+      flex: 1;
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+      background: linear-gradient(to top, var(--color-primary), oklch(from var(--color-primary) calc(l + 0.2) c h));
+      opacity: .75
+    }
+
+    .elev-bar:nth-child(odd) {
+      opacity: 1
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+      gap: var(--space-4);
+      margin-top: clamp(var(--space-10), 4vw, var(--space-16))
+    }
+
+    .testimonial-card {
+      background: var(--color-surface);
+      border: 1px solid oklch(from var(--color-text) l c h/0.08);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-6)
+    }
+
+    .testimonial-stars {
+      display: flex;
+      gap: var(--space-1);
+      margin-bottom: var(--space-4);
+      color: var(--color-accent-dark)
+    }
+
+    .testimonial-quote {
+      font-size: var(--text-base);
+      color: var(--color-text);
+      line-height: 1.65;
+      margin-bottom: var(--space-5);
+      font-style: italic
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3)
+    }
+
+    .author-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: var(--text-xs);
+      color: #fff;
+      flex-shrink: 0
+    }
+
+    .author-name {
+      font-weight: 600;
+      font-size: var(--text-sm);
+      color: var(--color-text)
+    }
+
+    .author-handle {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint)
+    }
+
+    .footer {
+      padding-block: var(--space-8);
+      border-top: 1px solid var(--color-divider)
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      max-width: var(--content-wide);
+      margin-inline: auto;
+      padding-inline: var(--space-6)
+    }
+
+    .footer-copy {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint)
+    }
+
+    .footer-links {
+      display: flex;
+      gap: var(--space-6)
+    }
+
+    .footer-links a {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      text-decoration: none;
+      transition: color var(--transition-interactive)
+    }
+
+    .footer-links a:hover {
+      color: var(--color-text-muted)
+    }
+
+    .success-msg {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      padding: var(--space-4) var(--space-6);
+      background: var(--color-primary-highlight);
+      border: 1px solid var(--color-primary);
+      border-radius: var(--radius-full);
+      color: var(--color-primary);
+      font-weight: 600;
+      font-size: var(--text-sm);
+      margin-top: var(--space-4);
+      animation: slide-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) both
+    }
+
+    .success-msg.visible {
+      display: flex
+    }
+
+    @keyframes slide-in {
+      from {
+        opacity: 0;
+        transform: translateY(8px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .fade-in {
+      opacity: 1
+    }
+
+    @supports(animation-timeline:scroll()) {
+      .fade-in {
+        opacity: 0;
+        animation: reveal-fade linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 80%
+      }
+    }
+
+    @keyframes reveal-fade {
+      to {
+        opacity: 1
+      }
+    }
+
+    @media(max-width:720px) {
+      .features-grid {
+        grid-template-columns: 1fr
+      }
+
+      .feature-card--large {
+        grid-column: span 1;
+        grid-template-columns: 1fr
+      }
+
+      .header-actions .btn-outline {
+        display: none
+      }
+
+      .stats-strip {
+        gap: var(--space-6)
+      }
+    }
+
+    @media(max-width:480px) {
+      .waitlist-form {
+        flex-direction: column;
+        align-items: center
+      }
+
+      .waitlist-input-wrap {
+        max-width: 100%
+      }
+
+      .btn-waitlist {
+        width: 100%
+      }
+    }
   </style>
 </head>
+
 <body>
   <video class="video-background" autoplay muted loop playsinline>
     <source src="./generated-video.mov" type="video/quicktime">
@@ -387,32 +982,51 @@
   <a href="#main" class="sr-only">Skip to content</a>
   <main id="main">
     <button class="theme-toggle-fixed" data-theme-toggle aria-label="Switch theme">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
     </button>
     <section class="hero">
       <div class="container">
         <h1 class="hero-heading">Elevate your <em>riding life.</em></h1>
-        <p class="hero-sub">More than an app. A private collective for riders who seek freedom, performance, and the perfect road. Designed for those who know the difference between a ride and an experience.</p>
+        <p class="hero-sub">More than an app. A private collective for riders who seek freedom, performance, and the
+          perfect road. Designed for those who know the difference between a ride and an experience.</p>
         <form class="waitlist-form" id="waitlist-form" novalidate>
           <div class="waitlist-input-wrap">
-            <input type="email" class="waitlist-input" id="email-input" placeholder="Join with your email" autocomplete="email" aria-label="Email address" required>
-            <svg class="waitlist-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <input type="email" class="waitlist-input" id="email-input" placeholder="your@email.com"
+              autocomplete="email" aria-label="Email address" required>
+            <svg class="waitlist-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
           </div>
           <button type="submit" class="btn-waitlist">Reserve your spot</button>
         </form>
         <div id="success-msg" class="success-msg" role="alert" aria-live="polite">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
           Welcome to the collective. We'll be in touch soon.
         </div>
         <div style="display:flex;justify-content:center">
           <div class="hero-count">
             <div class="avatar-stack" aria-hidden="true">
-              <div class="avatar"><div class="avatar-inner" style="background:#1a5c2a">J</div></div>
-              <div class="avatar"><div class="avatar-inner" style="background:#2a7a3a">S</div></div>
-              <div class="avatar"><div class="avatar-inner" style="background:#3a9250">M</div></div>
-              <div class="avatar"><div class="avatar-inner" style="background:#4aaa60">A</div></div>
+              <div class="avatar">
+                <div class="avatar-inner" style="background:#1a5c2a">J</div>
+              </div>
+              <div class="avatar">
+                <div class="avatar-inner" style="background:#2a7a3a">S</div>
+              </div>
+              <div class="avatar">
+                <div class="avatar-inner" style="background:#3a9250">M</div>
+              </div>
+              <div class="avatar">
+                <div class="avatar-inner" style="background:#4aaa60">A</div>
+              </div>
             </div>
-            <span id="count-display"><strong style="color:var(--color-text)">1,240+</strong> founding riders are waiting</span>
+            <span id="count-display"><strong style="color:var(--color-text)">1,240+</strong> founding riders are
+              waiting</span>
           </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
@@ -423,12 +1037,24 @@
                 <div class="map-overlay">&#x1F4CD; Box Hill Loop &middot; 38 km</div>
               </div>
               <div class="phone-stats">
-                <div class="stat-pill"><div class="stat-val">28.4</div><div class="stat-label">Avg km/h</div></div>
-                <div class="stat-pill"><div class="stat-val">38.1</div><div class="stat-label">Distance</div></div>
-                <div class="stat-pill"><div class="stat-val">740m</div><div class="stat-label">Elevation</div></div>
+                <div class="stat-pill">
+                  <div class="stat-val">28.4</div>
+                  <div class="stat-label">Avg km/h</div>
+                </div>
+                <div class="stat-pill">
+                  <div class="stat-val">38.1</div>
+                  <div class="stat-label">Distance</div>
+                </div>
+                <div class="stat-pill">
+                  <div class="stat-val">740m</div>
+                  <div class="stat-label">Elevation</div>
+                </div>
               </div>
               <div class="phone-activity">
-                <div><div class="activity-label">Today's ride</div><div class="activity-name">Box Hill &middot; Zone 3</div></div>
+                <div>
+                  <div class="activity-label">Today's ride</div>
+                  <div class="activity-name">Box Hill &middot; Zone 3</div>
+                </div>
                 <div class="activity-badge">PR!</div>
               </div>
             </div>
@@ -440,23 +1066,43 @@
     <!-- Brand Manifesto Section -->
     <section class="section section--alt manifesto-section" style="padding-top: 0; margin-top: -4rem;">
       <div class="container" style="max-width: var(--content-narrow); text-align: center;">
-        <div style="width: 1px; height: 100px; background: linear-gradient(to bottom, var(--color-border), transparent); margin-inline: auto; margin-bottom: var(--space-12);"></div>
+        <div
+          style="width: 1px; height: 100px; background: linear-gradient(to bottom, var(--color-border), transparent); margin-inline: auto; margin-bottom: var(--space-12);">
+        </div>
         <p class="section-label" style="opacity: 0.6; margin-bottom: var(--space-8);">Our Philosophy</p>
-        <h2 class="section-heading" style="margin-bottom: var(--space-8); font-size: var(--text-xl);">We believe the best rides haven't been found yet.</h2>
-        <p class="section-sub" style="margin-inline: auto; font-style: italic; font-size: var(--text-lg); line-height: 1.8;">
-          Cycly exists for the dedicated. For those who wake before the sun, who find peace in the climb, and who know that a bike is more than just carbon and steel. We aren't building just another app; we're building a movement for those who demand more from the road.
+        <h2 class="section-heading" style="margin-bottom: var(--space-8); font-size: var(--text-xl);">We believe the
+          best rides haven't been found yet.</h2>
+        <p class="section-sub"
+          style="margin-inline: auto; font-style: italic; font-size: var(--text-lg); line-height: 1.8;">
+          Cycly exists for the dedicated. For those who wake before the sun, who find peace in the climb, and who know
+          that a bike is more than just carbon and steel. We aren't building just another app; we're building a movement
+          for those who demand more from the road.
         </p>
-        <div style="width: 32px; height: 1px; background: var(--color-primary); margin-inline: auto; margin-top: var(--space-12);"></div>
+        <div
+          style="width: 32px; height: 1px; background: var(--color-primary); margin-inline: auto; margin-top: var(--space-12);">
+        </div>
       </div>
     </section>
 
     <div style="background: var(--color-bg);">
       <div class="container--wide">
         <div class="stats-strip fade-in" style="border-top: none;">
-          <div class="strip-stat"><div class="strip-val"><span>200+</span></div><div class="strip-label">Founding Routes</div></div>
-          <div class="strip-stat"><div class="strip-val"><span>Elite</span> metrics</div><div class="strip-label">Performance DNA</div></div>
-          <div class="strip-stat"><div class="strip-val"><span>Proprietary</span></div><div class="strip-label">Training Logic</div></div>
-          <div class="strip-stat"><div class="strip-val"><span>Strictly</span></div><div class="strip-label">Private Release</div></div>
+          <div class="strip-stat">
+            <div class="strip-val"><span>200+</span></div>
+            <div class="strip-label">Founding Routes</div>
+          </div>
+          <div class="strip-stat">
+            <div class="strip-val"><span>Elite</span> metrics</div>
+            <div class="strip-label">Performance DNA</div>
+          </div>
+          <div class="strip-stat">
+            <div class="strip-val"><span>Proprietary</span></div>
+            <div class="strip-label">Training Logic</div>
+          </div>
+          <div class="strip-stat">
+            <div class="strip-val"><span>Strictly</span></div>
+            <div class="strip-label">Private Release</div>
+          </div>
         </div>
       </div>
     </div>
@@ -468,42 +1114,77 @@
         <div class="features-grid">
           <div class="feature-card feature-card--large fade-in">
             <div>
-              <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+              <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg></div>
               <h3 class="feature-title">Intelligence in Motion</h3>
-              <p class="feature-desc">Dynamic training logic that evolves with your physiology, goals, and life. Not just a plan, but a whisper of progress in every pedal stroke.</p>
+              <p class="feature-desc">Dynamic training logic that evolves with your physiology, goals, and life. Not
+                just a plan, but a whisper of progress in every pedal stroke.</p>
             </div>
             <div class="elevation-chart" aria-hidden="true">
-              <div class="elev-label"><span>Elite Performance Profile</span><span style="color:var(--color-primary);font-weight:700">Top 1%</span></div>
+              <div class="elev-label"><span>Elite Performance Profile</span><span
+                  style="color:var(--color-primary);font-weight:700">Top 1%</span></div>
               <div class="elev-bars">
-                <div class="elev-bar" style="height:20%"></div><div class="elev-bar" style="height:28%"></div>
-                <div class="elev-bar" style="height:22%"></div><div class="elev-bar" style="height:45%"></div>
-                <div class="elev-bar" style="height:60%"></div><div class="elev-bar" style="height:75%"></div>
-                <div class="elev-bar" style="height:100%"></div><div class="elev-bar" style="height:88%"></div>
-                <div class="elev-bar" style="height:70%"></div><div class="elev-bar" style="height:55%"></div>
-                <div class="elev-bar" style="height:40%"></div><div class="elev-bar" style="height:30%"></div>
-                <div class="elev-bar" style="height:18%"></div><div class="elev-bar" style="height:10%"></div>
+                <div class="elev-bar" style="height:20%"></div>
+                <div class="elev-bar" style="height:28%"></div>
+                <div class="elev-bar" style="height:22%"></div>
+                <div class="elev-bar" style="height:45%"></div>
+                <div class="elev-bar" style="height:60%"></div>
+                <div class="elev-bar" style="height:75%"></div>
+                <div class="elev-bar" style="height:100%"></div>
+                <div class="elev-bar" style="height:88%"></div>
+                <div class="elev-bar" style="height:70%"></div>
+                <div class="elev-bar" style="height:55%"></div>
+                <div class="elev-bar" style="height:40%"></div>
+                <div class="elev-bar" style="height:30%"></div>
+                <div class="elev-bar" style="height:18%"></div>
+                <div class="elev-bar" style="height:10%"></div>
               </div>
             </div>
           </div>
           <div class="feature-card fade-in">
-            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg></div>
             <h3 class="feature-title">Endless Horizons</h3>
-            <p class="feature-desc">Curated route discovery focused on beauty and quality, not just distance. Discover the roads that make you forget the destination.</p>
+            <p class="feature-desc">Curated route discovery focused on beauty and quality, not just distance. Discover
+              the roads that make you forget the destination.</p>
           </div>
           <div class="feature-card fade-in">
-            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg></div>
             <h3 class="feature-title">The Inner Circle</h3>
-            <p class="feature-desc">Connect with a collective of riders who share your standards. Private groups and curated rides for those who ride with purpose.</p>
+            <p class="feature-desc">Connect with a collective of riders who share your standards. Private groups and
+              curated rides for those who ride with purpose.</p>
           </div>
           <div class="feature-card fade-in">
-            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg></div>
             <h3 class="feature-title">Clinical Clarity</h3>
-            <p class="feature-desc">Deep performance analytics rendered with minimalist precision. Understand your progress without the noise of generic data.</p>
+            <p class="feature-desc">Deep performance analytics rendered with minimalist precision. Understand your
+              progress without the noise of generic data.</p>
           </div>
           <div class="feature-card fade-in">
-            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg></div>
             <h3 class="feature-title">Founding Quiet</h3>
-            <p class="feature-desc">Safety and peace of mind integrated seamlessly. Premium features designed to protect your ride without intruding on the moment.</p>
+            <p class="feature-desc">Safety and peace of mind integrated seamlessly. Premium features designed to protect
+              your ride without intruding on the moment.</p>
           </div>
         </div>
       </div>
@@ -516,26 +1197,38 @@
         <div class="testimonials-grid">
           <div class="testimonial-card fade-in">
             <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="testimonial-quote">"Cycly has changed the way I see the road. It's not just tracking; it's an elevation of the entire riding experience."</p>
+            <p class="testimonial-quote">"Cycly has changed the way I see the road. It's not just tracking; it's an
+              elevation of the entire riding experience."</p>
             <div class="testimonial-author">
               <div class="author-avatar" style="background:var(--color-primary)">JM</div>
-              <div><div class="author-name">James M.</div><div class="author-handle">Founding Rider &middot; London</div></div>
+              <div>
+                <div class="author-name">James M.</div>
+                <div class="author-handle">Founding Rider &middot; London</div>
+              </div>
             </div>
           </div>
           <div class="testimonial-card fade-in">
             <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="testimonial-quote">"The Route Discovery feels like having a local pro guide you through the best-kept secrets of the hills. Truly world-class."</p>
+            <p class="testimonial-quote">"The Route Discovery feels like having a local pro guide you through the
+              best-kept secrets of the hills. Truly world-class."</p>
             <div class="testimonial-author">
               <div class="author-avatar" style="background:#2a7a3a">SC</div>
-              <div><div class="author-name">Sienna C.</div><div class="author-handle">Endurance Cyclist &middot; Peak District</div></div>
+              <div>
+                <div class="author-name">Sienna C.</div>
+                <div class="author-handle">Endurance Cyclist &middot; Peak District</div>
+              </div>
             </div>
           </div>
           <div class="testimonial-card fade-in">
             <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="testimonial-quote">"A rare tool that understands the soul of cycling. Minimalist, precise, and profoundly effective for the dedicated."</p>
+            <p class="testimonial-quote">"A rare tool that understands the soul of cycling. Minimalist, precise, and
+              profoundly effective for the dedicated."</p>
             <div class="testimonial-author">
               <div class="author-avatar" style="background:#3a9250">AR</div>
-              <div><div class="author-name">Adrian R.</div><div class="author-handle">Performance Lead &middot; Girona</div></div>
+              <div>
+                <div class="author-name">Adrian R.</div>
+                <div class="author-handle">Performance Lead &middot; Girona</div>
+              </div>
             </div>
           </div>
         </div>
@@ -544,7 +1237,7 @@
   </main>
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-copy">&#169; 2026 Cycly. For the founding few.</div>
+      <div class="footer-copy">&#169; 2026 Cycly. For Community, Coffee & Cycling of course</div>
       <nav class="footer-links" aria-label="Footer links">
         <a href="#" target="_blank" rel="noopener noreferrer">Privacy</a>
         <a href="#" target="_blank" rel="noopener noreferrer">Terms</a>
@@ -553,38 +1246,39 @@
     </div>
   </footer>
   <script>
-    (function(){
-      const t=document.querySelector('[data-theme-toggle]');
-      const r=document.documentElement;
-      let d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
-      r.setAttribute('data-theme',d);
-      function upd(){if(!t)return;t.setAttribute('aria-label','Switch to '+(d==='dark'?'light':'dark')+' mode');t.innerHTML=d==='dark'?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';}
+    (function () {
+      const t = document.querySelector('[data-theme-toggle]');
+      const r = document.documentElement;
+      let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+      r.setAttribute('data-theme', d);
+      function upd() { if (!t) return; t.setAttribute('aria-label', 'Switch to ' + (d === 'dark' ? 'light' : 'dark') + ' mode'); t.innerHTML = d === 'dark' ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>' : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'; }
       upd();
-      t&&t.addEventListener('click',()=>{d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);upd();});
+      t && t.addEventListener('click', () => { d = d === 'dark' ? 'light' : 'dark'; r.setAttribute('data-theme', d); upd(); });
     })();
-    let count=1240;
-    function handleForm(fId,iId,sId){
-      const form=document.getElementById(fId);
-      const inp=document.getElementById(iId);
-      const succ=document.getElementById(sId);
-      if(!form)return;
-      form.addEventListener('submit',function(e){
+    let count = 1240;
+    function handleForm(fId, iId, sId) {
+      const form = document.getElementById(fId);
+      const inp = document.getElementById(iId);
+      const succ = document.getElementById(sId);
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
         e.preventDefault();
-        const em=inp.value.trim();
-        if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){
-          inp.style.borderColor='#c0392b';inp.style.boxShadow='0 0 0 3px rgba(192,57,43,.15)';
+        const em = inp.value.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) {
+          inp.style.borderColor = '#c0392b'; inp.style.boxShadow = '0 0 0 3px rgba(192,57,43,.15)';
           inp.focus();
-          setTimeout(()=>{inp.style.borderColor='';inp.style.boxShadow='';},1600);
+          setTimeout(() => { inp.style.borderColor = ''; inp.style.boxShadow = ''; }, 1600);
           return;
         }
         count++;
-        form.style.display='none';
+        form.style.display = 'none';
         succ.classList.add('visible');
-        document.querySelectorAll('#count-display strong').forEach(el=>el.textContent=count.toLocaleString()+'+');
+        document.querySelectorAll('#count-display strong').forEach(el => el.textContent = count.toLocaleString() + '+');
       });
     }
-    handleForm('waitlist-form','email-input','success-msg');
+    handleForm('waitlist-form', 'email-input', 'success-msg');
     document.querySelectorAll('.video-background').forEach(v => v.playbackRate = 0.7);
   </script>
 </body>
+
 </html>
