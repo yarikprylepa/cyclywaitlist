@@ -1246,6 +1246,9 @@
     </div>
   </footer>
   <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
     (function () {
       const t = document.querySelector('[data-theme-toggle]');
       const r = document.documentElement;
