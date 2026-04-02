@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./cycly.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="./cycly.png">
-  <title>Cycly Waitlist</title>
-  <meta name="description" content="Cycly is the cycling app built for serious riders. Training plans, route discovery, performance insights and a community that gets it. Join the waitlist.">
-  <meta property="og:title" content="Cycly — Ride Smarter">
-  <meta property="og:description" content="The cycling app built for riders who love the ride. Join the waitlist.">
+  <title>Cycly — Elevate Your Riding Life</title>
+  <meta name="description" content="A private collective for riders who demand more. Experience the perfect blend of performance, discovery, and connection. Request early access.">
+  <meta property="og:title" content="Cycly — The Art of the Ride">
+  <meta property="og:description" content="Join the founding riders. A premium cycling experience built for the dedicated.">
   <meta property="og:type" content="website">
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 
@@ -28,13 +28,13 @@
       --radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;
       --radius-xl:1rem;--radius-2xl:1.5rem;--radius-full:9999px;
       --transition-interactive:180ms cubic-bezier(0.16,1,0.3,1);
-      --color-bg:#f5f4f0;--color-surface:#f8f7f4;--color-surface-2:#faf9f7;
-      --color-surface-offset:#eeecea;--color-surface-dynamic:#e5e3de;
-      --color-divider:#dbd9d4;--color-border:#d3d0cb;
-      --color-text:#1a1c14;--color-text-muted:#6b6b5f;--color-text-faint:#b0afa9;
-      --color-text-inverse:#f5f4f0;
-      --color-primary:#1a5c2a;--color-primary-hover:#134a20;--color-primary-active:#0d3817;
-      --color-primary-highlight:#c8dbc8;
+      --color-bg:#b7ceb4;--color-surface:#c4dcc0;--color-surface-2:#cedecd;
+      --color-surface-offset:#a6bf9e;--color-surface-dynamic:#9cb294;
+      --color-divider:#a7ba9d;--color-border:#9cae92;
+      --color-text:#0a0e0a;--color-text-muted:#425241;--color-text-faint:#7b8c7a;
+      --color-text-inverse:#b7ceb4;
+      --color-primary:#134a20;--color-primary-hover:#0d3817;--color-primary-active:#07260d;
+      --color-primary-highlight:#e2ede2;
       --color-accent:#b5e04a;--color-accent-dark:#8ab82e;
       --shadow-sm:0 1px 2px oklch(0.15 0.02 130/0.06);
       --shadow-md:0 4px 12px oklch(0.15 0.02 130/0.10);
@@ -73,7 +73,19 @@
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth;scroll-padding-top:var(--space-16)}
-    body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background-color:var(--color-bg);overflow-x:hidden}
+    body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background-color:var(--color-bg);overflow-x:hidden;isolation:isolate}
+    .video-background {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.12;
+      z-index: -1;
+      pointer-events: none;
+      filter: blur(6px);
+      transform: scale(1.1);
+    }
     img,svg{display:block;max-width:100%}
     h1,h2,h3,h4{text-wrap:balance;line-height:1.1;font-family:var(--font-display)}
     p,li{text-wrap:pretty}
@@ -85,41 +97,229 @@
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
     .container{max-width:var(--content-default);margin-inline:auto;padding-inline:var(--space-6)}
     .container--wide{max-width:var(--content-wide);margin-inline:auto;padding-inline:var(--space-6)}
-    .header{position:sticky;top:0;z-index:50;padding-block:var(--space-4);background:oklch(from var(--color-bg) l c h/0.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid oklch(from var(--color-text) l c h/0.07);transition:box-shadow var(--transition-interactive)}
-    .header--scrolled{box-shadow:var(--shadow-sm)}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--content-wide);margin-inline:auto;padding-inline:var(--space-6)}
-    .logo{display:flex;align-items:center;gap:var(--space-2);text-decoration:none;color:var(--color-text)}
-    .logo-wordmark{font-family:var(--font-display);font-weight:800;font-size:var(--text-lg);letter-spacing:-0.03em;color:var(--color-text)}
-    .header-actions{display:flex;align-items:center;gap:var(--space-3)}
-    .theme-toggle{width:36px;height:36px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;color:var(--color-text-muted);border:1px solid var(--color-border);transition:color var(--transition-interactive),background var(--transition-interactive),border-color var(--transition-interactive)}
-    .theme-toggle:hover{color:var(--color-text);background:var(--color-surface-offset)}
+    .theme-toggle-fixed{position:fixed;bottom:var(--space-6);right:var(--space-6);z-index:100;width:40px;height:40px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;color:var(--color-text-muted);border:1px solid var(--color-border);background:oklch(from var(--color-bg) l c h / 0.5);backdrop-filter:blur(12px);transition:color var(--transition-interactive),background var(--transition-interactive),border-color var(--transition-interactive)}
+    .theme-toggle-fixed:hover{color:var(--color-text);background:var(--color-surface-offset)}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);padding:var(--space-3) var(--space-6);border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:600;letter-spacing:-0.01em;text-decoration:none;cursor:pointer;border:none;transition:background var(--transition-interactive),color var(--transition-interactive),box-shadow var(--transition-interactive),transform var(--transition-interactive)}
     .btn-outline{background:transparent;color:var(--color-text);border:1.5px solid var(--color-border)}
     .btn-outline:hover{border-color:var(--color-primary);color:var(--color-primary)}
-    .hero{position:relative;overflow:hidden;padding-top:clamp(var(--space-16),10vw,var(--space-24));padding-bottom:clamp(var(--space-12),6vw,var(--space-20));text-align:center}
-    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% -10%,oklch(0.35 0.10 145/0.12) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 80%,oklch(0.75 0.18 88/0.06) 0%,transparent 60%);pointer-events:none}
-    .hero-badge{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-2) var(--space-4);background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:600;color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:var(--space-8)}
-    .hero-badge-dot{width:6px;height:6px;border-radius:var(--radius-full);background:var(--color-accent);box-shadow:0 0 8px var(--color-accent);animation:pulse-dot 2s ease-in-out infinite}
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      text-align: center;
+      color: var(--color-text);
+      padding-bottom: var(--space-16);
+      padding-top: 30vh;
+    }
+    .hero > .container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-4);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      color: var(--color-text-muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-8);
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: var(--radius-full);
+      background: var(--color-accent);
+      box-shadow: 0 0 8px var(--color-accent);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    .hero-heading {
+      font-size: var(--text-3xl);
+      font-weight: 800;
+      letter-spacing: -.05em;
+      color: var(--color-text);
+      max-width: 16ch;
+      margin-inline: auto;
+      margin-bottom: var(--space-6);
+      line-height: 0.95;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-heading em {
+      font-style: normal;
+      color: var(--color-accent);
+    }
+
+    .hero-sub {
+      font-size: var(--text-lg);
+      color: var(--color-text-muted);
+      max-width: 48ch;
+      margin-inline: auto;
+      margin-bottom: var(--space-10);
+      line-height: 1.55;
+      font-weight: 400;
+      position: relative;
+      z-index: 2;
+    }
+
+    .manifesto-section {
+      position: relative;
+    }
+
+    .manifesto-section {
+      position: relative;
+    }
+
+    .waitlist-form {
+      display: flex;
+      gap: var(--space-3);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: var(--space-6);
+      position: relative;
+      z-index: 2;
+    }
+
+    .waitlist-input-wrap {
+      position: relative;
+      flex: 1 1 260px;
+      max-width: 340px;
+    }
+
+    .waitlist-input {
+      width: 100%;
+      padding: var(--space-4) var(--space-5);
+      padding-right: var(--space-10);
+      border-radius: var(--radius-full);
+      border: 1.5px solid var(--color-border);
+      background: var(--color-surface-2);
+      color: var(--color-text);
+      font-size: var(--text-base);
+      transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive);
+      outline: none;
+    }
+
+    .waitlist-input::placeholder {
+      color: var(--color-text-faint);
+    }
+
+    .waitlist-input:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px oklch(from var(--color-primary) l c h/0.12);
+    }
+
+    .waitlist-input-icon {
+      position: absolute;
+      right: var(--space-4);
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-text-faint);
+      pointer-events: none;
+    }
+
+    .btn-waitlist {
+      padding: var(--space-4) var(--space-8);
+      font-size: var(--text-base);
+      font-weight: 700;
+      background: var(--color-primary);
+      color: #fff;
+      border-radius: var(--radius-full);
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background var(--transition-interactive), box-shadow var(--transition-interactive), transform var(--transition-interactive);
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-waitlist:hover {
+      background: var(--color-accent-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-waitlist:active {
+      transform: translateY(0);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-note {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-count {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-top: var(--space-8);
+      padding: var(--space-3) var(--space-5);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      position: relative;
+      z-index: 2;
+    }
+
+    .avatar-stack {
+      display: flex;
+    }
+
+    .avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius-full);
+      border: 2px solid rgba(10, 12, 9, 0.8);
+      margin-left: -8px;
+      overflow: hidden;
+      background: var(--color-surface-offset);
+    }
+
+    .avatar:first-child {
+      margin-left: 0;
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .hero-visual {
+      margin-top: clamp(var(--space-12), 6vw, var(--space-20));
+      position: relative;
+      z-index: 2;
+    }
+
     @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.85)}}
-    .hero-heading{font-size:var(--text-3xl);font-weight:800;letter-spacing:-.04em;color:var(--color-text);max-width:16ch;margin-inline:auto;margin-bottom:var(--space-6);line-height:1.0}
-    .hero-heading em{font-style:normal;color:var(--color-primary)}
-    .hero-sub{font-size:var(--text-lg);color:var(--color-text-muted);max-width:48ch;margin-inline:auto;margin-bottom:var(--space-10);line-height:1.55;font-weight:400}
-    .waitlist-form{display:flex;gap:var(--space-3);justify-content:center;flex-wrap:wrap;margin-bottom:var(--space-6)}
-    .waitlist-input-wrap{position:relative;flex:1 1 260px;max-width:340px}
-    .waitlist-input{width:100%;padding:var(--space-4) var(--space-5);padding-right:var(--space-10);border-radius:var(--radius-full);border:1.5px solid var(--color-border);background:var(--color-surface-2);color:var(--color-text);font-size:var(--text-base);transition:border-color var(--transition-interactive),box-shadow var(--transition-interactive);outline:none}
-    .waitlist-input::placeholder{color:var(--color-text-faint)}
-    .waitlist-input:focus{border-color:var(--color-primary);box-shadow:0 0 0 3px oklch(from var(--color-primary) l c h/0.12)}
-    .waitlist-input-icon{position:absolute;right:var(--space-4);top:50%;transform:translateY(-50%);color:var(--color-text-faint);pointer-events:none}
-    .btn-waitlist{padding:var(--space-4) var(--space-8);font-size:var(--text-base);font-weight:700;background:var(--color-primary);color:#fff;border-radius:var(--radius-full);border:none;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background var(--transition-interactive),box-shadow var(--transition-interactive),transform var(--transition-interactive)}
-    .btn-waitlist:hover{background:var(--color-primary-hover);transform:translateY(-2px);box-shadow:var(--shadow-md)}
-    .btn-waitlist:active{transform:translateY(0);box-shadow:var(--shadow-sm)}
-    .hero-note{font-size:var(--text-xs);color:var(--color-text-faint);display:flex;align-items:center;justify-content:center;gap:var(--space-2)}
-    .hero-count{display:inline-flex;align-items:center;gap:var(--space-3);margin-top:var(--space-8);padding:var(--space-3) var(--space-5);background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-full);font-size:var(--text-sm);color:var(--color-text-muted)}
-    .avatar-stack{display:flex}
-    .avatar{width:28px;height:28px;border-radius:var(--radius-full);border:2px solid var(--color-bg);margin-left:-8px;overflow:hidden;background:var(--color-surface-offset)}
-    .avatar:first-child{margin-left:0}
-    .avatar-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff}
-    .hero-visual{margin-top:clamp(var(--space-12),6vw,var(--space-20));position:relative}
     .phone-mockup{width:min(340px,90vw);margin-inline:auto;background:var(--color-surface);border-radius:2.5rem;border:1.5px solid var(--color-border);box-shadow:var(--shadow-lg),0 40px 80px oklch(0.15 0.05 140/0.12);overflow:hidden}
     .phone-notch{width:120px;height:32px;background:var(--color-bg);border-radius:0 0 var(--radius-xl) var(--radius-xl);margin-inline:auto;margin-bottom:var(--space-2)}
     .phone-screen{padding:var(--space-4)}
@@ -181,53 +381,28 @@
   </style>
 </head>
 <body>
+  <video class="video-background" autoplay muted loop playsinline>
+    <source src="./generated-video.mov" type="video/quicktime">
+  </video>
   <a href="#main" class="sr-only">Skip to content</a>
-  <header class="header" id="site-header">
-    <div class="header-inner">
-      <a href="#" class="logo" aria-label="Cycly home">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2"/>
-          <line x1="16" y1="3" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-          <line x1="27.5" y1="9.5" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-          <line x1="27.5" y1="22.5" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-          <line x1="16" y1="29" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-          <line x1="4.5" y1="22.5" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-          <line x1="4.5" y1="9.5" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-          <circle cx="16" cy="16" r="3" fill="#b5e04a" stroke="#1a5c2a" stroke-width="1.5"/>
-        </svg>
-        <span class="logo-wordmark">Cycly</span>
-      </a>
-      <div class="header-actions">
-        <a href="#waitlist-form" class="btn btn-outline">Join waitlist</a>
-        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-      </div>
-    </div>
-  </header>
   <main id="main">
+    <button class="theme-toggle-fixed" data-theme-toggle aria-label="Switch theme">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
     <section class="hero">
       <div class="container">
-        <div class="hero-badge">
-          <span class="hero-badge-dot" aria-hidden="true"></span>
-          Coming soon &middot; Join the waitlist
-        </div>
-        <h1 class="hero-heading">Cycling, <em>smarter.<br>Every ride.</em></h1>
-        <p class="hero-sub">Cycly is the app built for riders who take their cycling seriously &mdash; from morning commutes to epic climbs. Training plans, live route guidance, performance analytics, and a community that gets it.</p>
+        <h1 class="hero-heading">Elevate your <em>riding life.</em></h1>
+        <p class="hero-sub">More than an app. A private collective for riders who seek freedom, performance, and the perfect road. Designed for those who know the difference between a ride and an experience.</p>
         <form class="waitlist-form" id="waitlist-form" novalidate>
           <div class="waitlist-input-wrap">
-            <input type="email" class="waitlist-input" id="email-input" placeholder="your@email.com" autocomplete="email" aria-label="Email address" required>
+            <input type="email" class="waitlist-input" id="email-input" placeholder="Join with your email" autocomplete="email" aria-label="Email address" required>
             <svg class="waitlist-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
-          <button type="submit" class="btn-waitlist">Get early access</button>
+          <button type="submit" class="btn-waitlist">Reserve your spot</button>
         </form>
-        <p class="hero-note">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          No spam, ever. Unsubscribe anytime.
-        </p>
         <div id="success-msg" class="success-msg" role="alert" aria-live="polite">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          You're on the list! We'll be in touch soon &#x1F6B4;
+          Welcome to the collective. We'll be in touch soon.
         </div>
         <div style="display:flex;justify-content:center">
           <div class="hero-count">
@@ -237,7 +412,7 @@
               <div class="avatar"><div class="avatar-inner" style="background:#3a9250">M</div></div>
               <div class="avatar"><div class="avatar-inner" style="background:#4aaa60">A</div></div>
             </div>
-            <span id="count-display"><strong style="color:var(--color-text)">1,240+</strong> riders already signed up</span>
+            <span id="count-display"><strong style="color:var(--color-text)">1,240+</strong> founding riders are waiting</span>
           </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
@@ -261,30 +436,44 @@
         </div>
       </div>
     </section>
-    <div>
+
+    <!-- Brand Manifesto Section -->
+    <section class="section section--alt manifesto-section" style="padding-top: 0; margin-top: -4rem;">
+      <div class="container" style="max-width: var(--content-narrow); text-align: center;">
+        <div style="width: 1px; height: 100px; background: linear-gradient(to bottom, var(--color-border), transparent); margin-inline: auto; margin-bottom: var(--space-12);"></div>
+        <p class="section-label" style="opacity: 0.6; margin-bottom: var(--space-8);">Our Philosophy</p>
+        <h2 class="section-heading" style="margin-bottom: var(--space-8); font-size: var(--text-xl);">We believe the best rides haven't been found yet.</h2>
+        <p class="section-sub" style="margin-inline: auto; font-style: italic; font-size: var(--text-lg); line-height: 1.8;">
+          Cycly exists for the dedicated. For those who wake before the sun, who find peace in the climb, and who know that a bike is more than just carbon and steel. We aren't building just another app; we're building a movement for those who demand more from the road.
+        </p>
+        <div style="width: 32px; height: 1px; background: var(--color-primary); margin-inline: auto; margin-top: var(--space-12);"></div>
+      </div>
+    </section>
+
+    <div style="background: var(--color-bg);">
       <div class="container--wide">
-        <div class="stats-strip fade-in">
-          <div class="strip-stat"><div class="strip-val"><span>200+</span></div><div class="strip-label">Curated routes</div></div>
-          <div class="strip-stat"><div class="strip-val"><span>12</span> metrics</div><div class="strip-label">Tracked per ride</div></div>
-          <div class="strip-stat"><div class="strip-val"><span>AI&#8209;powered</span></div><div class="strip-label">Training plans</div></div>
-          <div class="strip-stat"><div class="strip-val"><span>iOS &amp; Android</span></div><div class="strip-label">At launch</div></div>
+        <div class="stats-strip fade-in" style="border-top: none;">
+          <div class="strip-stat"><div class="strip-val"><span>200+</span></div><div class="strip-label">Founding Routes</div></div>
+          <div class="strip-stat"><div class="strip-val"><span>Elite</span> metrics</div><div class="strip-label">Performance DNA</div></div>
+          <div class="strip-stat"><div class="strip-val"><span>Proprietary</span></div><div class="strip-label">Training Logic</div></div>
+          <div class="strip-stat"><div class="strip-val"><span>Strictly</span></div><div class="strip-label">Private Release</div></div>
         </div>
       </div>
     </div>
     <section class="section">
       <div class="container--wide">
-        <p class="section-label">Features</p>
-        <h2 class="section-heading">Everything you need<br>on the road</h2>
-        <p class="section-sub">Built from the saddle up by riders who've logged thousands of miles and wanted a single app that does it all.</p>
+        <p class="section-label">The Experience</p>
+        <h2 class="section-heading">Built for the<br>Founding Few</h2>
+        <p class="section-sub">A refined suite of tools designed to disappear, leaving only you and the road.</p>
         <div class="features-grid">
           <div class="feature-card feature-card--large fade-in">
             <div>
               <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-              <h3 class="feature-title">Adaptive Training Plans</h3>
-              <p class="feature-desc">Cycly learns your fitness level, goals, and calendar. Training blocks adapt week by week &mdash; no generic 12-week plan you'll abandon by week three.</p>
+              <h3 class="feature-title">Intelligence in Motion</h3>
+              <p class="feature-desc">Dynamic training logic that evolves with your physiology, goals, and life. Not just a plan, but a whisper of progress in every pedal stroke.</p>
             </div>
             <div class="elevation-chart" aria-hidden="true">
-              <div class="elev-label"><span>Elevation profile</span><span style="color:var(--color-primary);font-weight:700">+740m</span></div>
+              <div class="elev-label"><span>Elite Performance Profile</span><span style="color:var(--color-primary);font-weight:700">Top 1%</span></div>
               <div class="elev-bars">
                 <div class="elev-bar" style="height:20%"></div><div class="elev-bar" style="height:28%"></div>
                 <div class="elev-bar" style="height:22%"></div><div class="elev-bar" style="height:45%"></div>
@@ -298,55 +487,55 @@
           </div>
           <div class="feature-card fade-in">
             <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-            <h3 class="feature-title">Route Discovery</h3>
-            <p class="feature-desc">Find new roads and trails near you. Filter by distance, elevation, surface type, and difficulty. Every route is rider-verified.</p>
+            <h3 class="feature-title">Endless Horizons</h3>
+            <p class="feature-desc">Curated route discovery focused on beauty and quality, not just distance. Discover the roads that make you forget the destination.</p>
           </div>
           <div class="feature-card fade-in">
             <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-            <h3 class="feature-title">Clubs &amp; Group Rides</h3>
-            <p class="feature-desc">Join local clubs, organise group rides, and share segments with your crew. Cycling is better together.</p>
+            <h3 class="feature-title">The Inner Circle</h3>
+            <p class="feature-desc">Connect with a collective of riders who share your standards. Private groups and curated rides for those who ride with purpose.</p>
           </div>
           <div class="feature-card fade-in">
             <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-            <h3 class="feature-title">Performance Insights</h3>
-            <p class="feature-desc">Power, cadence, heart rate, VO2 trends &mdash; all in one dashboard. Know exactly what's working and what isn't.</p>
+            <h3 class="feature-title">Clinical Clarity</h3>
+            <p class="feature-desc">Deep performance analytics rendered with minimalist precision. Understand your progress without the noise of generic data.</p>
           </div>
           <div class="feature-card fade-in">
             <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <h3 class="feature-title">Safety Features</h3>
-            <p class="feature-desc">Live location sharing, emergency contacts, and crash detection &mdash; because peace of mind matters on every ride.</p>
+            <h3 class="feature-title">Founding Quiet</h3>
+            <p class="feature-desc">Safety and peace of mind integrated seamlessly. Premium features designed to protect your ride without intruding on the moment.</p>
           </div>
         </div>
       </div>
     </section>
     <section class="section section--alt">
       <div class="container--wide">
-        <p class="section-label">Early testers</p>
-        <h2 class="section-heading">Riders love it</h2>
-        <p class="section-sub">We've been testing Cycly with a small group of riders across the UK. Here's what they're saying.</p>
+        <p class="section-label">From the Road</p>
+        <h2 class="section-heading">The Collective Voice</h2>
+        <p class="section-sub">Early founding riders are already experiencing a more elevated way to ride.</p>
         <div class="testimonials-grid">
           <div class="testimonial-card fade-in">
             <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="testimonial-quote">"Finally an app that doesn't make me choose between tracking my rides and building a training plan. The adaptive plan feature is genuinely clever."</p>
+            <p class="testimonial-quote">"Cycly has changed the way I see the road. It's not just tracking; it's an elevation of the entire riding experience."</p>
             <div class="testimonial-author">
               <div class="author-avatar" style="background:var(--color-primary)">JM</div>
-              <div><div class="author-name">Jamie M.</div><div class="author-handle">Club cyclist &middot; Manchester</div></div>
+              <div><div class="author-name">James M.</div><div class="author-handle">Founding Rider &middot; London</div></div>
             </div>
           </div>
           <div class="testimonial-card fade-in">
             <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="testimonial-quote">"The route discovery is 10&times; better than anything else I've used. Found a brilliant 50 km loop around the Surrey Hills I never knew existed."</p>
+            <p class="testimonial-quote">"The Route Discovery feels like having a local pro guide you through the best-kept secrets of the hills. Truly world-class."</p>
             <div class="testimonial-author">
               <div class="author-avatar" style="background:#2a7a3a">SC</div>
-              <div><div class="author-name">Sarah C.</div><div class="author-handle">Sportive rider &middot; London</div></div>
+              <div><div class="author-name">Sienna C.</div><div class="author-handle">Endurance Cyclist &middot; Peak District</div></div>
             </div>
           </div>
           <div class="testimonial-card fade-in">
             <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="testimonial-quote">"The data is there if you want to geek out, but it doesn't overwhelm you. Perfect balance. My commute has literally become a training session."</p>
+            <p class="testimonial-quote">"A rare tool that understands the soul of cycling. Minimalist, precise, and profoundly effective for the dedicated."</p>
             <div class="testimonial-author">
               <div class="author-avatar" style="background:#3a9250">AR</div>
-              <div><div class="author-name">Alex R.</div><div class="author-handle">Commuter cyclist &middot; Birmingham</div></div>
+              <div><div class="author-name">Adrian R.</div><div class="author-handle">Performance Lead &middot; Girona</div></div>
             </div>
           </div>
         </div>
@@ -355,7 +544,7 @@
   </main>
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-copy">&#169; 2026 Cycly. Built for riders, by riders.</div>
+      <div class="footer-copy">&#169; 2026 Cycly. For the founding few.</div>
       <nav class="footer-links" aria-label="Footer links">
         <a href="#" target="_blank" rel="noopener noreferrer">Privacy</a>
         <a href="#" target="_blank" rel="noopener noreferrer">Terms</a>
@@ -373,8 +562,6 @@
       upd();
       t&&t.addEventListener('click',()=>{d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);upd();});
     })();
-    const hdr=document.getElementById('site-header');
-    window.addEventListener('scroll',()=>hdr.classList.toggle('header--scrolled',scrollY>10),{passive:true});
     let count=1240;
     function handleForm(fId,iId,sId){
       const form=document.getElementById(fId);
@@ -397,6 +584,7 @@
       });
     }
     handleForm('waitlist-form','email-input','success-msg');
+    document.querySelectorAll('.video-background').forEach(v => v.playbackRate = 0.7);
   </script>
 </body>
 </html>
